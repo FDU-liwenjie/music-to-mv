@@ -1,0 +1,4 @@
+interface:
+  display_name: "Music to MV"
+  short_description: "给喜欢的歌校对歌词，选择叙事或画面释义，逐镜制作自己的音乐视频"
+  default_prompt: "用 $music-to-mv 给我的歌曲做一支 MV，先让我校对歌词，再一起选画面。"

@@ -1,0 +1,17 @@
+{
+  "name": "music-to-mv",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Frame-accurate renderer for the Music to MV creative skill",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "render": "node render/cli.mjs"
+  },
+  "dependencies": {
+    "@napi-rs/canvas": "0.1.100",
+    "three": "0.170.0"
+  }
+}

@@ -1,0 +1,278 @@
+{
+  "mode": "lyric-visual",
+  "style": "typography",
+  "scenes": [
+    {
+      "start": 0.0,
+      "end": 2.8649,
+      "setting": "room",
+      "action": "reach",
+      "motif": "light",
+      "emotion": "determined",
+      "meaning": "攒下的情绪，在心里打了个卷。",
+      "art": "art/pressure.svg",
+      "artMode": "background",
+      "layers": [
+        {
+          "src": "art/coil.svg",
+          "from": [
+            -15,
+            0,
+            1.06
+          ],
+          "to": [
+            43,
+            -2,
+            0.89
+          ]
+        },
+        {
+          "src": "art/press.svg",
+          "from": [
+            -60,
+            0,
+            1
+          ],
+          "to": [
+            48,
+            0,
+            1
+          ]
+        }
+      ],
+      "camera": "still"
+    },
+    {
+      "start": 2.8649,
+      "end": 4.6712,
+      "setting": "room",
+      "action": "offer",
+      "motif": "letter",
+      "emotion": "determined",
+      "meaning": "我把那一点珍惜，放回你手里。",
+      "art": "art/trade.svg",
+      "artMode": "background",
+      "layers": [
+        {
+          "src": "art/left.svg",
+          "from": [
+            -48,
+            0,
+            0.98
+          ],
+          "to": [
+            16,
+            0,
+            1
+          ]
+        },
+        {
+          "src": "art/right.svg",
+          "from": [
+            89,
+            0,
+            0.98
+          ],
+          "to": [
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "src": "art/token.svg",
+          "from": [
+            -90,
+            14,
+            0.83
+          ],
+          "to": [
+            60,
+            -9,
+            1.08
+          ]
+        }
+      ],
+      "camera": "still"
+    },
+    {
+      "start": 4.6712,
+      "end": 6.0777,
+      "setting": "street",
+      "action": "depart",
+      "motif": "leaf",
+      "emotion": "restless",
+      "meaning": "等到掌心张开，影子先飞走了。",
+      "art": "art/run.svg",
+      "artMode": "background",
+      "layers": [
+        {
+          "src": "art/left.svg",
+          "from": [
+            14,
+            0,
+            1
+          ],
+          "to": [
+            -78,
+            20,
+            0.98
+          ]
+        },
+        {
+          "src": "art/birds.svg",
+          "from": [
+            -40,
+            39,
+            0.88
+          ],
+          "to": [
+            257,
+            -76,
+            1.04
+          ]
+        }
+      ],
+      "camera": "still"
+    },
+    {
+      "start": 6.0777,
+      "end": 9.2165,
+      "setting": "room",
+      "action": "wait",
+      "motif": "light",
+      "emotion": "sad",
+      "meaning": "街上仍在落雨，我忘了怎么向前。",
+      "art": "art/loss.svg",
+      "artMode": "background",
+      "layers": [
+        {
+          "src": "art/profile.svg",
+          "from": [
+            -18,
+            4,
+            1
+          ],
+          "to": [
+            5,
+            2,
+            1.02
+          ]
+        },
+        {
+          "src": "art/drop.svg",
+          "from": [
+            11,
+            -82,
+            1
+          ],
+          "to": [
+            -5,
+            113,
+            1
+          ]
+        }
+      ],
+      "camera": "still"
+    },
+    {
+      "start": 9.2165,
+      "end": 12.0,
+      "setting": "room",
+      "action": "return",
+      "motif": "clock",
+      "emotion": "calm",
+      "meaning": "我们各自的时针，转出了两种明天。",
+      "art": "art/time.svg",
+      "artMode": "background",
+      "layers": [
+        {
+          "src": "art/dials.svg",
+          "from": [
+            0,
+            0,
+            1
+          ],
+          "to": [
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "src": "art/needlesA.svg",
+          "from": [
+            0,
+            0,
+            1
+          ],
+          "to": [
+            0,
+            0,
+            1
+          ],
+          "rotation": [
+            -45,
+            65
+          ],
+          "pivot": [
+            367.5,
+            263.25
+          ]
+        },
+        {
+          "src": "art/needlesB.svg",
+          "from": [
+            0,
+            0,
+            1
+          ],
+          "to": [
+            0,
+            0,
+            1
+          ],
+          "rotation": [
+            4,
+            19
+          ],
+          "pivot": [
+            606,
+            263.25
+          ]
+        }
+      ],
+      "camera": "push"
+    }
+  ],
+  "title": "两种时间",
+  "duration": 12,
+  "audio": "../night-train/song.wav",
+  "lyrics": [],
+  "beats": [
+    0.0,
+    0.5,
+    1.0,
+    1.5,
+    2.0,
+    2.5,
+    3.0,
+    3.5,
+    4.0,
+    4.5,
+    5.0,
+    5.5,
+    6.0,
+    6.5,
+    7.0,
+    7.5,
+    8.0,
+    8.5,
+    9.0,
+    9.5,
+    10.0,
+    10.5,
+    11.0,
+    11.5
+  ]
+}

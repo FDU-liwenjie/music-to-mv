@@ -1,0 +1,208 @@
+{
+  "mode": "narrative",
+  "style": "papercut",
+  "scenes": [
+    {
+      "start": 0.0,
+      "end": 5.1663,
+      "setting": "station",
+      "action": "wait",
+      "motif": "mountain",
+      "emotion": "sad",
+      "meaning": "雪夜站台上，两个人停在顶棚的两边。",
+      "art": "art/platform.svg",
+      "artMode": "background",
+      "layers": [
+        {
+          "src": "art/people-a.svg",
+          "from": [
+            8,
+            0,
+            1
+          ],
+          "to": [
+            -10,
+            0,
+            1.04
+          ]
+        },
+        {
+          "src": "art/rain.svg",
+          "from": [
+            25,
+            -37,
+            1.22
+          ],
+          "to": [
+            -18,
+            67,
+            1.22
+          ]
+        }
+      ],
+      "camera": "push"
+    },
+    {
+      "start": 5.1663,
+      "end": 8.4864,
+      "setting": "station",
+      "action": "offer",
+      "motif": "flower",
+      "emotion": "romantic",
+      "meaning": "两只手隔着一件红外套短暂相遇。",
+      "art": "art/hands-bg.svg",
+      "artMode": "background",
+      "layers": [
+        {
+          "src": "art/giver.svg",
+          "from": [
+            -118,
+            7,
+            0.98
+          ],
+          "to": [
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "src": "art/coat.svg",
+          "from": [
+            -86,
+            13,
+            0.97
+          ],
+          "to": [
+            6,
+            0,
+            1.03
+          ]
+        },
+        {
+          "src": "art/hand.svg",
+          "from": [
+            112,
+            14,
+            1
+          ],
+          "to": [
+            0,
+            0,
+            1
+          ]
+        }
+      ],
+      "camera": "still"
+    },
+    {
+      "start": 8.4864,
+      "end": 12.0,
+      "setting": "station",
+      "action": "depart",
+      "motif": "train",
+      "emotion": "calm",
+      "meaning": "列车从两人之间掠过，窗框最后一次把他们放在同一幅画里。",
+      "art": "art/track.svg",
+      "artMode": "background",
+      "layers": [
+        {
+          "src": "art/depart.svg",
+          "from": [
+            0,
+            0,
+            1
+          ],
+          "to": [
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "src": "art/railcar.svg",
+          "from": [
+            890,
+            0,
+            1
+          ],
+          "to": [
+            -213,
+            0,
+            1.05
+          ]
+        },
+        {
+          "src": "art/watch.svg",
+          "from": [
+            -40,
+            0,
+            1
+          ],
+          "to": [
+            18,
+            0,
+            1.02
+          ]
+        },
+        {
+          "src": "art/window.svg",
+          "from": [
+            -64,
+            0,
+            1.2
+          ],
+          "to": [
+            32,
+            0,
+            1.2
+          ]
+        },
+        {
+          "src": "art/rain.svg",
+          "from": [
+            22,
+            -43,
+            1.18
+          ],
+          "to": [
+            -23,
+            43,
+            1.18
+          ]
+        }
+      ],
+      "camera": "pan-left"
+    }
+  ],
+  "title": "雨站",
+  "duration": 12,
+  "audio": "../night-train/song.wav",
+  "lyrics": [],
+  "beats": [
+    0.0,
+    0.5,
+    1.0,
+    1.5,
+    2.0,
+    2.5,
+    3.0,
+    3.5,
+    4.0,
+    4.5,
+    5.0,
+    5.5,
+    6.0,
+    6.5,
+    7.0,
+    7.5,
+    8.0,
+    8.5,
+    9.0,
+    9.5,
+    10.0,
+    10.5,
+    11.0,
+    11.5
+  ]
+}
