@@ -1,6 +1,7 @@
 // Regression: only the active timed lyric may change a rendered frame's text.
 import assert from "node:assert/strict";
 import { createHash } from "node:crypto";
+import { createCanvas } from "@napi-rs/canvas";
 import test from "node:test";
 import { fileURLToPath } from "node:url";
 import { prepareComposition } from "./composition.mjs";
@@ -51,10 +52,11 @@ for (const mode of ["narrative", "lyric-visual"]) {
           prepareComposition(p, backgrounds, 320, 180),
         ),
       );
+      const plate = style === "blender" ? createCanvas(320, 180) : undefined;
       for (const t of [0.75, 1.0, 1.75, 2.0, 2.5]) {
-        const expected = digest(bare(t)),
-          annotated = digest(notes(t)),
-          current = digest(sung(t));
+        const expected = digest(bare(t, plate)),
+          annotated = digest(notes(t, plate)),
+          current = digest(sung(t, plate));
         assert.equal(
           annotated,
           expected,

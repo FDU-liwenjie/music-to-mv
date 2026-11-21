@@ -16,11 +16,23 @@ def main():
     parser.add_argument("directory", type=Path)
     parser.add_argument("--mode", required=True, choices=["narrative", "lyric-visual"])
     parser.add_argument("--style", required=True, choices=[
-        "pixel", "riso", "watercolor", "papercut", "lowpoly", "typography", "cinematic"
+        "pixel", "riso", "watercolor", "papercut", "lowpoly", "typography", "cinematic", "blender"
     ])
     parser.add_argument("--title")
     parser.add_argument("--art", type=Path, help="copy a JPG or PNG as the first shot's photographic plate")
+    parser.add_argument("--blend", type=Path, help="copy a packed Blender scene as the first shot")
+    parser.add_argument("--first-frame", type=int, help="native Blender frame at the start of the shot (default 1)")
     args = parser.parse_args()
+    blend = args.blend.expanduser().resolve() if args.blend else None
+    if args.style == "blender":
+        if not blend or not blend.is_file() or blend.suffix.lower() != ".blend":
+            parser.error("--style blender needs --blend PATH to a local .blend scene")
+        if args.art:
+            parser.error("Use imagery inside the .blend file for Blender shots")
+    elif blend or args.first_frame is not None:
+        parser.error("--blend and --first-frame require --style blender")
+    if args.first_frame is not None and args.first_frame < 1:
+        parser.error("--first-frame must be at least 1")
     plate = args.art.expanduser().resolve() if args.art else None
     if args.style == "cinematic" and plate is None:
         parser.error("--style cinematic needs --art PATH to a local JPG or PNG")
@@ -59,6 +71,14 @@ def main():
             asset = asset_dir / ("shot-01" + plate.suffix.lower())
             shutil.copyfile(plate, asset)
             data["scenes"][0]["art"] = asset.relative_to(project).as_posix()
+        if blend:
+            asset = project / "assets" / "shot-01.blend"
+            asset.parent.mkdir()
+            shutil.copyfile(blend, asset)
+            data["scenes"][0] = {
+                "start": 0, "end": duration, "blend": asset.relative_to(project).as_posix(),
+                "firstFrame": args.first_frame or 1,
+            }
         write_json(project / "project.json", data)
         project.rename(dest)
     print(dest / "project.json")

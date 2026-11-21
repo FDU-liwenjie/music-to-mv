@@ -11,6 +11,7 @@ export const styles = [
   "lowpoly",
   "typography",
   "cinematic",
+  "blender",
 ];
 export const settings = [
   "station",
@@ -51,6 +52,7 @@ export const emotions = [
   "wild",
 ];
 const inks = {
+  blender: ["#172029", "#ede5d9", "#b98b70", "#718588", "#b8bac0"],
   cinematic: ["#172029", "#ede5d9", "#b98b70", "#718588", "#b8bac0"],
   pixel: ["#202c49", "#e8c38c", "#e07f61", "#819bb0", "#354861"],
   riso: ["#193f55", "#ffdfab", "#ef5642", "#55a7a0", "#d19874"],

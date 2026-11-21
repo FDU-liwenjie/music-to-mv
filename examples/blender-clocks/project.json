@@ -1,0 +1,17 @@
+{
+  "title": "两种时间",
+  "mode": "lyric-visual",
+  "style": "blender",
+  "lyrics": [],
+  "beats": [],
+  "audio": "../night-train/song.wav",
+  "scenes": [
+    {
+      "start": 0,
+      "end": 6,
+      "blend": "clocks.blend",
+      "firstFrame": 1,
+      "meaning": "两枚实体怀表起初共用读数。蓝钢秒针回落，琥珀秒针继续快走。"
+    }
+  ]
+}

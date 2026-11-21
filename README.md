@@ -1,6 +1,18 @@
 # Music to MV · 给喜欢的歌拍一支 MV
 
-把一首歌交给 Skill，先听原唱、校歌词，再一起决定这支 MV 怎么拍。最后拿到带原声的 MP4、字幕，以及能逐镜修改的工程。想把递出的外套换成一封信，或者让副歌的一次切镜晚半拍，都可以在工程里改。
+把一首歌交给 Skill，先听原唱、校歌词，再一起决定这支 MV 怎么拍。默认用 Blender 建场景、布光、设机位，叙事与歌词视觉都能从歌曲开始。最后拿到带原声的 MP4、字幕，以及能逐镜修改的工程。想把递出的外套换成一封信，或者让副歌的一次切镜晚半拍，都可以在工程里改。
+
+### Blender 原生三维样片
+
+| 叙事型 ·《雨后末班车》 | 歌词视觉 ·《两种时间》 |
+| --- | --- |
+| ![正面来车、车窗和空位上的红外套](gallery/blender-station.webp) | ![两根指针从相同的位置渐渐错开](gallery/blender-clocks.jpg) |
+| 两节电车沿轨道驶过站台。车灯照亮钢轨，镜头从车头转到车窗，最后落在留下的红外套上。 | 在 Blender 里建立表壳、无字刻度与指针。让指针从同一刻度出发，再用不同速度表现词义。 |
+| [编辑电车、车站和三台摄影机](examples/blender-station/rain-station.blend) | [编辑表盘、材质和动画](examples/blender-clocks/clocks.blend) |
+
+安装 Blender 后，可以直接打开工程改机位，也能用一条渲染命令让两种拍法对齐自己的歌。[用 Blender 拍一段音乐](references/blender.md)
+
+### 摄影与图形样片
 
 | 叙事型 MV ·《雨站》摄影版 | 歌词视觉 MV ·《两种时间》 |
 | --- | --- |
@@ -12,7 +24,7 @@
 
 ## 让它拍成你喜欢的样子
 
-**叙事型 MV** 用人物和行动讲整段歌的情绪。**歌词视觉 MV** 用物件、空间和变化解释每句歌词。你可以自由选其中一种，再选材质。需要看清皮肤、布料、车体和夜景反光时，可以选摄影关键帧。也可以选像素、孔版印刷、水彩笔刷、剪纸、低多边形 3D 或动态歌词。两种类型的成片都只显示当句原歌词。歌词解读写进分镜，前奏和间奏用画面来讲。
+**叙事型 MV** 用人物和行动讲整段歌的情绪。**歌词视觉 MV** 用物件、空间和变化解释每句歌词。你可以自由选其中一种，再选材质。需要车辆沿轨道行驶、同一空间内切换机位、控制遮挡和灯光时，可以选 Blender。摄影关键帧适合从人脸、布料、湿地反光等现成画面出发制作镜头。也可以选像素、孔版印刷、水彩笔刷、剪纸、低多边形 3D 或动态歌词。两种类型的成片都只显示当句原歌词。歌词解读写进分镜，前奏和间奏用画面来讲。
 
 材质之外还可以指定画面怎么变。“运动一点”可以拍成跟着跑者侧移，在鼓点上切弯道；“商务一点、又有点痴情”可以拍一个人在玻璃门关上后反复折起一张旧工牌；“冷静到疯狂”可以让主歌保持远景，到副歌才推近、加快切镜。角色、布景、色板、镜头运动和时长都能分别修改。[查看创作示例与镜头字段](references/direction.md)
 
@@ -25,6 +37,8 @@
 这三张静帧来自作者此前制作的 MV。同一首《去年夏天》保留了两种材质，方便比较笔触和用色。[作品说明](gallery/README.md)
 
 ## 安装
+
+Blender 三维制作使用 Blender 4.5 LTS，支持后台渲染。
 
 准备 Node.js 20 或更高版本、Python 3.10 或更高版本，以及命令行可用的 FFmpeg 和 ffprobe。渲染中文字幕需要中文字体，常见选择有苹方、微软雅黑和思源黑体。
 
@@ -48,7 +62,7 @@ python3 -m venv .venv
 
 在新的 Codex 对话里附上歌曲或给出本地文件路径，然后说：
 
-> 用 $music-to-mv 给这首歌拍一支 MV。先把你听到的歌词和时间给我看。副歌我想拍得有点执着，但人物的动作要克制。给我看叙事和歌词视觉各会怎么拍，再做一个有声小样。
+> 用 $music-to-mv 给这首歌拍一支 Blender MV。先让我逐句核对歌词，再给我看副歌的两种拍法：一个故事、一个能读懂词义的三维镜头。我想要克制的动作和有冷暖变化的灯光。先做有原唱的小样，保留 .blend 给我改。
 
 ## 一次实际制作会经历什么
 
@@ -59,21 +73,23 @@ python3 -m venv .venv
 
 ### 先用 12 秒原创练习曲跑一遍
 
-从仓库根目录运行。第一条命令用 Python 合成练习用的音轨，第二、三条命令分别把同一段声音拍成故事与画面释义。
+从仓库根目录运行。第一条命令用 Python 合成练习用的音轨，第二条用 Blender 导出 12 秒列车叙事，第三条用同一首练习曲的片段导出双表特写。
 
 ```sh
 python3 examples/night-train/make_audio.py
-node render/cli.mjs examples/rain-cinema/project.json outputs/rain-cinema.mp4
-node render/cli.mjs examples/out-of-time/project.json outputs/out-of-time.mp4
+node render/cli.mjs examples/blender-station/project.json outputs/rail.mp4 --width 960 --height 540 --fps 24
+node render/cli.mjs examples/blender-clocks/project.json outputs/clocks.mp4 --width 960 --height 540 --fps 24
 ```
 
 想对照同一段故事的不同美术，可以打开 [《雨站》剪纸工程](examples/rain-station/)。想从内置图形开始，可以打开 [《末班渡船》的两份基础镜头表](examples/night-train/)。也可以把输出名换成 PNG，再加 `--start 6.5`，只导出第 6.5 秒那一帧。给自己的歌曲建工程可运行：
 
 ```sh
-python3 scripts/new_project.py "/path/to/song.mp3" "/path/to/my-mv" --mode narrative --style papercut
+python3 scripts/new_project.py "/path/to/song.mp3" "/path/to/my-mv" --mode narrative --style blender --blend "/path/to/scene.blend"
 ```
 
 ## 底层如何出片
+
+Blender 模式启动本机的 Blender，读取 .blend 里的三维场景、渲染摄影机和动画。按歌曲时间抽取原生帧，再由公共合成步骤叠上当句歌词、接入原声。车辆和摄影机可各自动画，光照、反射和遮挡直接来自场景。
 
 Python 和可选的 **faster-whisper** 在本地读取音轨，维护逐行歌词、试听片段和校订时间。另一条分析流程用低频能量的突变标记适合动作的重音候选。切镜可以跟鼓点，字幕可以等原唱开口，两套时间可以分别编辑。
 

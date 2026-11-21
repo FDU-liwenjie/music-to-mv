@@ -28,3 +28,7 @@ node render/cli.mjs examples/out-of-time/project.json outputs/out-of-time.mp4
 ### 摄影版《雨站》
 
 [预览](rain-cinema.webp) · [可编辑工程](../examples/rain-cinema/)。摄影式关键帧由 AI 生成。站台底板、带透明遮片的车体、灯影和掠过的窗框分别运动，公开工程配可重建的原创练习曲。
+
+### Blender 原生三维
+
+[《雨后末班车》动画](blender-station.webp) 展示同一组三维列车、轨道、站台和灯光在三个机位下的变化。[《两种时间》静帧](blender-clocks.jpg) 展示同一起点、不同转速的两只表。两份公开工程均使用可重建的原创练习曲，画面内只有造型、灯光与动作。[电车工程](../examples/blender-station/) · [双表工程](../examples/blender-clocks/)

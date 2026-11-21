@@ -16,3 +16,4 @@ projects/
 *.ogg
 *.mp4
 *.mov
+*.blend[0-9]*

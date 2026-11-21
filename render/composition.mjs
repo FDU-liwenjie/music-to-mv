@@ -314,7 +314,7 @@ export async function prepareComposition(project, base, width, height) {
       h = img.height * factor;
     c.drawImage(img, (960 - w) / 2 + dx, (540 - h) / 2 + dy, w, h);
   }
-  function draw(t) {
+  function draw(t, nativePlate = null) {
     const idx = project.scenes.findIndex(
       (s) => t >= s.start - 1e-8 && t < s.end - 1e-8,
     );
@@ -339,7 +339,13 @@ export async function prepareComposition(project, base, width, height) {
       shot.intensity ?? intensities[shot.emotion] ?? 0.45,
     );
     const lyricMode = project.mode === "lyric-visual";
-    if (style === "cinematic") {
+    if (style === "blender") {
+      if (!nativePlate)
+        throw Error("Missing native Blender frame at " + t + "s");
+      tc.fillStyle = "#000";
+      tc.fillRect(0, 0, width, height);
+      tc.drawImage(nativePlate, 0, 0, width, height);
+    } else if (style === "cinematic") {
       drawPhotograph(tc, assets, shot, u, t - shot.start, idx, width, height);
     } else {
       const state = motion(shot.action, u, t, intensity);

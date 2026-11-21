@@ -1,0 +1,28 @@
+{
+  "title": "雨后末班车",
+  "mode": "narrative",
+  "style": "blender",
+  "lyrics": [],
+  "beats": [],
+  "audio": "../night-train/song.wav",
+  "scenes": [
+    {
+      "start": 0,
+      "end": 4,
+      "blend": "rain-station.blend",
+      "firstFrame": 13
+    },
+    {
+      "start": 4,
+      "end": 8,
+      "blend": "rain-station.blend",
+      "firstFrame": 137
+    },
+    {
+      "start": 8,
+      "end": 12,
+      "blend": "rain-station.blend",
+      "firstFrame": 287
+    }
+  ]
+}

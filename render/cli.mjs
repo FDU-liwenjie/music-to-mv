@@ -11,6 +11,7 @@ import {
 } from "node:fs";
 import { dirname, resolve, basename, extname } from "node:path";
 import { randomUUID } from "node:crypto";
+import { prepareBlenderFrames } from "./blender.mjs";
 import { prepareComposition } from "./composition.mjs";
 import { actions, emotions, motifs, settings, styles } from "./art.mjs";
 
@@ -82,6 +83,22 @@ function validateProject(p) {
       );
     const field = "scene " + (i + 1);
     const photographic = (s.style || p.style) === "cinematic";
+    const native = (s.style || p.style) === "blender";
+    if (native) {
+      check(
+        typeof s.blend === "string" && /\.blend$/i.test(s.blend),
+        field + ".blend requires a local .blend file",
+      );
+      check(
+        !s.art && !s.layers?.length,
+        field + ": place the imagery and layers in the .blend scene",
+      );
+    }
+    if (s.firstFrame != null)
+      check(
+        native && Number.isSafeInteger(s.firstFrame) && s.firstFrame >= 1,
+        field + ".firstFrame requires a Blender shot and a positive integer",
+      );
     if (photographic) {
       check(
         typeof s.art === "string" && /\.(jpe?g|png)$/i.test(s.art),
@@ -291,15 +308,24 @@ async function run(argv) {
     dirname(output),
     `.${basename(output)}.${randomUUID()}${type}`,
   );
+  const frames =
+    type === ".png" ? 1 : Math.max(1, Math.ceil(duration * fps - 1e-7));
+  let native;
   try {
+    if (type === ".mp4") toolResult("ffmpeg", ["-version"]);
+    native = await prepareBlenderFrames(p, dirname(input), {
+      start,
+      fps,
+      count: frames,
+      width,
+      height,
+    });
     if (type === ".png") {
-      draw(start).savePng(temp);
+      draw(start, await native?.frame(0)).savePng(temp);
       renameSync(temp, output);
       console.log(output);
       return;
     }
-    toolResult("ffmpeg", ["-version"]);
-    const frames = Math.max(1, Math.ceil(duration * fps - 1e-7));
     const enc = spawn(
       "ffmpeg",
       [
@@ -360,7 +386,10 @@ async function run(argv) {
     try {
       for (let i = 0; i < frames; i++) {
         if (pipeError) throw pipeError;
-        const pixels = draw(start + i / fps).data();
+        const pixels = draw(
+          start + i / fps,
+          native ? await native.frame(i) : null,
+        ).data();
         if (!enc.stdin.write(pixels)) await once(enc.stdin, "drain");
         if (i > 0 && i % (fps * 15) === 0)
           console.error(`${Math.round((i / frames) * 100)}%`);
@@ -377,6 +406,7 @@ async function run(argv) {
     renameSync(temp, output);
     console.log(`${output} (${frames} frames)`);
   } finally {
+    native?.close();
     rmSync(temp, { force: true });
   }
 }
