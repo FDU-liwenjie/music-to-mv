@@ -10,6 +10,7 @@ export const styles = [
   "papercut",
   "lowpoly",
   "typography",
+  "cinematic",
 ];
 export const settings = [
   "station",
@@ -50,6 +51,7 @@ export const emotions = [
   "wild",
 ];
 const inks = {
+  cinematic: ["#172029", "#ede5d9", "#b98b70", "#718588", "#b8bac0"],
   pixel: ["#202c49", "#e8c38c", "#e07f61", "#819bb0", "#354861"],
   riso: ["#193f55", "#ffdfab", "#ef5642", "#55a7a0", "#d19874"],
   watercolor: ["#345467", "#f9eacb", "#cb735d", "#79aaa6", "#adacc3"],

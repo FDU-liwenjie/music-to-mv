@@ -2,17 +2,17 @@
 
 把一首歌交给 Skill，先听原唱、校歌词，再一起决定这支 MV 怎么拍。最后拿到带原声的 MP4、字幕，以及能逐镜修改的工程。想把递出的外套换成一封信，或者让副歌的一次切镜晚半拍，都可以在工程里改。
 
-| 叙事型 MV ·《雨站》 | 歌词视觉 MV ·《两种时间》 |
+| 叙事型 MV ·《雨站》摄影版 | 歌词视觉 MV ·《两种时间》 |
 | --- | --- |
-| ![站台上的两个人递出红外套，列车将他们隔开](gallery/rain-station.gif) | ![被压缩的弹簧、飞走的鸟与速度不同的两只钟](gallery/out-of-time.gif) |
-| 贯穿三镜的是一件红外套。它在谁手里，让观众看懂两个人的关系。 | 每一句选一个看得见的动作。两根指针走向不同的刻度，观众便能看到“不同步”。 |
-| [打开分层 SVG 和镜头表](examples/rain-station/) | [打开分层 SVG 和镜头表](examples/out-of-time/) |
+| ![雨中站台、红外套和驶过的电车](gallery/rain-cinema.webp) | ![被压缩的弹簧、飞走的鸟与速度不同的两只钟](gallery/out-of-time.gif) |
+| 站台上他拿着红外套，车窗再掠过时衣服已在她怀里。车体沿轨道驶近，站台保持原位。 | 每一句选一个看得见的动作。两根指针走向不同的刻度，观众便能看到“不同步”。 |
+| [打开摄影底板、车体遮片与镜头表](examples/rain-cinema/) | [打开分层 SVG 和镜头表](examples/out-of-time/) |
 
 上面是本 Skill 渲染的无声动图。两份公开工程都可以配仓库内程序生成的原创练习曲重新导出有声 MP4。
 
 ## 让它拍成你喜欢的样子
 
-**叙事型 MV** 用人物和行动讲整段歌的情绪。**歌词视觉 MV** 用物件、空间和变化解释每句歌词。你可以自由选其中一种，再选材质。现有六种为像素、孔版印刷、水彩笔刷、剪纸、低多边形 3D 和动态字体。
+**叙事型 MV** 用人物和行动讲整段歌的情绪。**歌词视觉 MV** 用物件、空间和变化解释每句歌词。你可以自由选其中一种，再选材质。需要看清皮肤、布料、车体和夜景反光时，可以选摄影关键帧。也可以选像素、孔版印刷、水彩笔刷、剪纸、低多边形 3D 或动态歌词。两种类型的成片都只显示当句原歌词。歌词解读写进分镜，前奏和间奏用画面来讲。
 
 材质之外还可以指定画面怎么变。“运动一点”可以拍成跟着跑者侧移，在鼓点上切弯道；“商务一点、又有点痴情”可以拍一个人在玻璃门关上后反复折起一张旧工牌；“冷静到疯狂”可以让主歌保持远景，到副歌才推近、加快切镜。角色、布景、色板、镜头运动和时长都能分别修改。[查看创作示例与镜头字段](references/direction.md)
 
@@ -55,7 +55,7 @@ python3 -m venv .venv
 1. **确认歌词。** Skill 展示带时间的歌词草稿。你可以说“第 7 行最后一个字改成……”，单独试听这一行，或贴入自己查到的歌词。文本和时间均可修正。认可后保存 SRT。
 2. **确定画面。** 比较同一段歌词的两种拍法，选材质、人物和情感变化。分镜会记录每镜开始和结束的秒数，以及谁在做什么。
 3. **先看小样。** 用原声渲染 8–15 秒，集中看一个关键动作、一次转场和字幕。说“镜头多停半拍”就能局部重做。确认后可沿同一工程制作全曲。
-4. **保留工程。** project.json 保存歌词、镜头与重音，SVG 或 PNG 保存自绘画面。MP4、SRT 和素材可以一起交付。[歌词及重音工具命令](tools/README.md)
+4. **保留工程。** project.json 保存歌词、镜头与重音，JPG、PNG 或 SVG 保存摄影与绘画素材。MP4、SRT 和素材可以一起交付。[歌词及重音工具命令](tools/README.md)
 
 ### 先用 12 秒原创练习曲跑一遍
 
@@ -63,11 +63,11 @@ python3 -m venv .venv
 
 ```sh
 python3 examples/night-train/make_audio.py
-node render/cli.mjs examples/rain-station/project.json outputs/rain-station.mp4
+node render/cli.mjs examples/rain-cinema/project.json outputs/rain-cinema.mp4
 node render/cli.mjs examples/out-of-time/project.json outputs/out-of-time.mp4
 ```
 
-想从内置图形开始，可以打开 [《末班渡船》的两份基础镜头表](examples/night-train/)。也可以把输出名换成 PNG，再加 `--start 6.5`，只导出第 6.5 秒那一帧。给自己的歌曲建工程可运行：
+想对照同一段故事的不同美术，可以打开 [《雨站》剪纸工程](examples/rain-station/)。想从内置图形开始，可以打开 [《末班渡船》的两份基础镜头表](examples/night-train/)。也可以把输出名换成 PNG，再加 `--start 6.5`，只导出第 6.5 秒那一帧。给自己的歌曲建工程可运行：
 
 ```sh
 python3 scripts/new_project.py "/path/to/song.mp3" "/path/to/my-mv" --mode narrative --style papercut
@@ -77,6 +77,6 @@ python3 scripts/new_project.py "/path/to/song.mp3" "/path/to/my-mv" --mode narra
 
 Python 和可选的 **faster-whisper** 在本地读取音轨，维护逐行歌词、试听片段和校订时间。另一条分析流程用低频能量的突变标记适合动作的重音候选。切镜可以跟鼓点，字幕可以等原唱开口，两套时间可以分别编辑。
 
-Node.js 按原音轨上的时间逐帧读分镜。**Skia Canvas** 绘制像素、套印网点、水彩叠色、纸层和字体；每镜可以叠加独立 SVG / PNG，对单层设置位移、缩放和旋转。**Three.js** 用几何体、三维变换和透视相机构建低多边形布景，再把面片投影到画布。**FFmpeg** 将画面与输入歌曲裁到同一段，编码为 H.264 / AAC 的 MP4。Linux 缺中文字体时可设置环境变量 `MV_FONT` 指向本地中文字体文件。
+Node.js 按原音轨上的时间逐帧读分镜。摄影模式使用本地 JPG / PNG 底板，分别控制取景中心、近景遮挡、主体运动和细雨。公开《雨站》的摄影关键帧由 AI 生成，列车与固定站台通过独立图层合成，切镜与原声都由代码控制。**Skia Canvas** 绘制像素、套印网点、水彩叠色、纸层和字体；每镜可以叠加独立 SVG / PNG，对单层设置位移、缩放和旋转。**Three.js** 用几何体、三维变换和透视相机构建低多边形布景，再把面片投影到画布。**FFmpeg** 将画面与输入歌曲裁到同一段，编码为 H.264 / AAC 的 MP4。Linux 缺中文字体时可设置环境变量 `MV_FONT` 指向本地中文字体文件。
 
 制作流程借鉴 Anything2Explainer 的逐镜编排、抽帧复核与可编辑交付。当前仓库自带 MV 渲染器；此前两支《去年夏天》的美术实践还参考了 Lemo-Opuscar。[Anything2Explainer](https://github.com/Vincentwei1021/anything2explainer) · [Lemo-Opuscar](https://github.com/lemomo-ai/lemo-opuscar) · [Three.js](https://threejs.org/) · [faster-whisper](https://github.com/SYSTRAN/faster-whisper) · [FFmpeg](https://ffmpeg.org/)

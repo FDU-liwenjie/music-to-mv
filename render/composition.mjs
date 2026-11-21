@@ -13,6 +13,11 @@ import {
   emotions,
 } from "./art.mjs";
 import { diorama } from "./diorama.mjs";
+import {
+  drawImageLayers,
+  drawPhotograph,
+  prepareMaskedLayers,
+} from "./photography.mjs";
 
 const clamp = (v, lo = 0, hi = 1) => Math.max(lo, Math.min(v, hi));
 const ease = (u) => u * u * (3 - 2 * u);
@@ -218,7 +223,7 @@ function plate(c, shot, t, u, p, state, pulse) {
   if (shot.action === "unfold")
     motif(c, "leaf", x + 66 * u, y - 48 * u, 52 * u, 0.24 * u, p);
 }
-function poster(c, shot, t, u, p, state, pulse, font, lyricMode) {
+function poster(c, shot, u, p, state, pulse, lyricMode) {
   const [ink, paper, accent, sea] = p;
   c.fillStyle = paper;
   c.fillRect(0, 0, 960, 540);
@@ -263,18 +268,6 @@ function poster(c, shot, t, u, p, state, pulse, font, lyricMode) {
       state.phase,
       p,
     );
-  const headline = shot.headline || shot.meaning || shot.caption || "";
-  if (headline)
-    label(
-      c,
-      headline,
-      lyricMode ? 689 : 251,
-      lyricMode ? 233 : 130,
-      324,
-      headline.length > 12 ? 35 : 51,
-      font,
-      ink,
-    );
 }
 async function loadArt(path) {
   if (
@@ -295,14 +288,16 @@ export async function prepareComposition(project, base, width, height) {
     target = createCanvas(width, height),
     tc = target.getContext("2d");
   const assets = new Map();
+  const maskedAssets = new Map();
   for (const shot of project.scenes) {
     for (const source of [
       shot.art,
-      ...(shot.layers || []).map((l) => l.src),
+      ...(shot.layers || []).flatMap((l) => [l.src, l.mask]),
     ].filter(Boolean)) {
       if (!assets.has(source))
         assets.set(source, await loadArt(resolve(base, source)));
     }
+    prepareMaskedLayers(shot.layers, assets, maskedAssets);
   }
   let lastScene = -1,
     backdrop,
@@ -343,188 +338,163 @@ export async function prepareComposition(project, base, width, height) {
     const intensity = clamp(
       shot.intensity ?? intensities[shot.emotion] ?? 0.45,
     );
-    const state = motion(shot.action, u, t, intensity);
-    if (lastScene !== idx) {
-      lastScene = idx;
-      backdrop = makeBackdrop(shot, style, p, 83 + idx * 919);
-      const sw =
-        style === "pixel" && !shot.art && !shot.layers?.length
-          ? 320
-          : Math.max(960, Math.min(width, 1920));
-      stageCanvas = createCanvas(sw, Math.round((sw * 9) / 16));
-      stage = stageCanvas.getContext("2d");
-    }
-    const c = stage;
-    const pulse = pulseAt(project.beats || [], t);
     const lyricMode = project.mode === "lyric-visual";
-    c.save();
-    c.scale(stageCanvas.width / 960, stageCanvas.height / 540);
-    c.fillStyle = p[0];
-    c.fillRect(0, 0, 960, 540);
-    c.save();
-    camera(c, shot.camera || "push", u, intensity);
-    const backgroundArt = shot.art && shot.artMode !== "foreground";
-    if (backgroundArt) {
-      art(c, shot.art, "cover");
-    } else if (style === "typography") {
-      poster(c, shot, t, u, p, state, pulse, font, lyricMode);
-    } else if (style === "lowpoly") {
-      const g = c.createLinearGradient(0, 0, 0, 540);
-      g.addColorStop(0, mix(p[1], p[4], 0.46));
-      g.addColorStop(1, p[1]);
-      c.fillStyle = g;
-      c.fillRect(0, 0, 960, 540);
-      oval(c, 695, 96, 47, 47, p[1]);
-      diorama(c, shot, t, u, p, lyricMode);
-      if (lyricMode)
-        motif(
-          c,
-          shot.motif,
-          515 + 12 * u,
-          224,
-          108 + 7 * pulse,
-          state.angle,
-          p,
-        );
-      else if (!["boat", "light"].includes(shot.motif))
-        motif(c, shot.motif, 504, 243, 32, state.angle, p);
+    if (style === "cinematic") {
+      drawPhotograph(tc, assets, shot, u, t - shot.start, idx, width, height);
     } else {
-      c.drawImage(backdrop, 0, 0, 960, 540);
-      if (lyricMode) plate(c, shot, t, u, p, state, pulse);
-      else {
-        if (shot.action === "offer")
-          actor(c, 575, 368, 1.05, 0, 0.48, t, p, -1);
-        actor(
-          c,
-          state.x,
-          374,
-          1.57,
-          state.walk,
-          state.gesture,
-          state.phase,
-          p,
-          shot.action === "return" ? -1 : 1,
-        );
-        motif(
-          c,
-          shot.motif,
-          state.mx,
-          state.my,
-          48 + state.gesture * 8 + pulse * 2,
-          state.angle,
-          p,
-        );
+      const state = motion(shot.action, u, t, intensity);
+      if (lastScene !== idx) {
+        lastScene = idx;
+        backdrop = makeBackdrop(shot, style, p, 83 + idx * 919);
+        const sw =
+          style === "pixel" && !shot.art && !shot.layers?.length
+            ? 320
+            : Math.max(960, Math.min(width, 1920));
+        stageCanvas = createCanvas(sw, Math.round((sw * 9) / 16));
+        stage = stageCanvas.getContext("2d");
       }
-    }
-    if (shot.art && shot.artMode === "foreground")
-      art(
-        c,
-        shot.art,
-        "contain",
-        (state.x - 476) * 0.65,
-        -state.gesture * 9,
-        1 + 0.04 * ease(u),
-      );
-    for (const layer of shot.layers || []) {
-      const a = layer.from || [0, 0, 1],
-        b = layer.to || a,
-        s = ease(u);
+      const c = stage;
+      const pulse = pulseAt(project.beats || [], t);
       c.save();
-      if (layer.rotation) {
-        const [px, py] = layer.pivot || [480, 270];
-        c.translate(px, py);
-        c.rotate(
-          ((layer.rotation[0] + (layer.rotation[1] - layer.rotation[0]) * s) *
-            Math.PI) /
-            180,
-        );
-        c.translate(-px, -py);
+      c.scale(stageCanvas.width / 960, stageCanvas.height / 540);
+      c.fillStyle = p[0];
+      c.fillRect(0, 0, 960, 540);
+      c.save();
+      camera(c, shot.camera || "push", u, intensity);
+      const backgroundArt = shot.art && shot.artMode !== "foreground";
+      if (backgroundArt) {
+        art(c, shot.art, "cover");
+      } else if (style === "typography") {
+        poster(c, shot, u, p, state, pulse, lyricMode);
+      } else if (style === "lowpoly") {
+        const g = c.createLinearGradient(0, 0, 0, 540);
+        g.addColorStop(0, mix(p[1], p[4], 0.46));
+        g.addColorStop(1, p[1]);
+        c.fillStyle = g;
+        c.fillRect(0, 0, 960, 540);
+        oval(c, 695, 96, 47, 47, p[1]);
+        diorama(c, shot, t, u, p, lyricMode);
+        if (lyricMode)
+          motif(
+            c,
+            shot.motif,
+            515 + 12 * u,
+            224,
+            108 + 7 * pulse,
+            state.angle,
+            p,
+          );
+        else if (!["boat", "light"].includes(shot.motif))
+          motif(c, shot.motif, 504, 243, 32, state.angle, p);
+      } else {
+        c.drawImage(backdrop, 0, 0, 960, 540);
+        if (lyricMode) plate(c, shot, t, u, p, state, pulse);
+        else {
+          if (shot.action === "offer")
+            actor(c, 575, 368, 1.05, 0, 0.48, t, p, -1);
+          actor(
+            c,
+            state.x,
+            374,
+            1.57,
+            state.walk,
+            state.gesture,
+            state.phase,
+            p,
+            shot.action === "return" ? -1 : 1,
+          );
+          motif(
+            c,
+            shot.motif,
+            state.mx,
+            state.my,
+            48 + state.gesture * 8 + pulse * 2,
+            state.angle,
+            p,
+          );
+        }
       }
-      art(
-        c,
-        layer.src,
-        "contain",
-        a[0] + s * (b[0] - a[0]),
-        a[1] + s * (b[1] - a[1]),
-        a[2] + s * (b[2] - a[2]),
-      );
+      if (shot.art && shot.artMode === "foreground")
+        art(
+          c,
+          shot.art,
+          "contain",
+          (state.x - 476) * 0.65,
+          -state.gesture * 9,
+          1 + 0.04 * ease(u),
+        );
+      drawImageLayers(c, shot.layers, assets, u);
       c.restore();
+      c.restore();
+      tc.save();
+      tc.imageSmoothingEnabled = style !== "pixel";
+      tc.fillStyle = p[0];
+      tc.fillRect(0, 0, width, height);
+      const cover = Math.max(
+        width / stageCanvas.width,
+        height / stageCanvas.height,
+      );
+      tc.drawImage(
+        stageCanvas,
+        (width - stageCanvas.width * cover) / 2,
+        (height - stageCanvas.height * cover) / 2,
+        stageCanvas.width * cover,
+        stageCanvas.height * cover,
+      );
+      tc.restore();
     }
-    c.restore();
-    c.restore();
-    tc.save();
-    tc.imageSmoothingEnabled = style !== "pixel";
-    tc.fillStyle = p[0];
-    tc.fillRect(0, 0, width, height);
-    const cover = Math.max(
-      width / stageCanvas.width,
-      height / stageCanvas.height,
-    );
-    tc.drawImage(
-      stageCanvas,
-      (width - stageCanvas.width * cover) / 2,
-      (height - stageCanvas.height * cover) / 2,
-      stageCanvas.width * cover,
-      stageCanvas.height * cover,
-    );
-    tc.restore();
-    // Overlay captions after compositing so the camera never crops them.
+    // Timed lyrics are the only source of screen text. Scene notes stay editable
+    // in the project and never become a fallback during instrumental passages.
     const currentLyric = (project.lyrics || []).find(
       (line) => t >= line.start && t < line.end,
     );
-    const meaning = lyricMode ? shot.meaning || "" : "";
-    const caption = currentLyric?.text ?? shot.caption ?? "";
-    if (meaning || caption) {
-      const unit = Math.min(width / 960, height / 540),
-        totalHeight = height / unit,
-        wide = width / unit;
+    const lyric = currentLyric?.text;
+    if (lyric?.trim()) {
+      const unit = Math.min(width / 960, height / 540);
+      const high = height / unit;
+      const wide = width / unit;
       tc.save();
       tc.scale(unit, unit);
-      const maxWidth = wide * 0.88;
-      const lyricSize = 26,
-        meaningSize = caption ? 18 : 26;
-      const blockHeight = (text, size) => {
-        tc.font = `600 ${size}px ${font}`;
-        return text
-          ? arrangedLines(tc, text, maxWidth).length * size * 1.25
-          : 0;
-      };
-      const lyricH = blockHeight(caption, lyricSize),
-        meaningH = blockHeight(meaning, meaningSize);
-      const bottom = totalHeight - 30,
-        gap = lyricH && meaningH ? 10 : 0;
-      const top = Math.max(0, bottom - lyricH - gap - meaningH - 52);
-      const grad = tc.createLinearGradient(0, top, 0, totalHeight);
-      grad.addColorStop(0, "#14202d00");
-      grad.addColorStop(1, "#14202dee");
-      tc.fillStyle = grad;
-      tc.fillRect(0, top, wide, totalHeight - top);
-      if (meaning)
+      if (style === "typography" && !shot.art && !shot.layers?.length) {
+        // The sung line itself is the poster foreground. Anchor to output
+        // coordinates so the letters stay legible with a moving or cropped camera.
+        const landscape = width >= height;
         label(
           tc,
-          meaning,
-          wide / 2,
-          bottom - lyricH - gap - meaningH / 2,
-          maxWidth,
-          meaningSize,
+          lyric,
+          wide * (landscape ? (lyricMode ? 0.73 : 0.28) : 0.5),
+          high * (landscape ? (lyricMode ? 0.44 : 0.24) : 0.24),
+          wide * (landscape ? 0.43 : 0.84),
+          lyric.length > 16 ? 36 : 48,
           font,
-          "#ffedca",
-          "center",
-          true,
+          p[0],
         );
-      if (caption)
+      } else {
+        const size = 26;
+        const maxWidth = wide * 0.88;
+        tc.font = `600 ${size}px ${font}`;
+        const bottom = high - 30;
+        const blockHeight =
+          arrangedLines(tc, lyric, maxWidth).length * size * 1.25;
+        const top = Math.max(0, bottom - blockHeight - 52);
+        const grad = tc.createLinearGradient(0, top, 0, high);
+        grad.addColorStop(0, "#14202d00");
+        grad.addColorStop(1, "#14202dee");
+        tc.fillStyle = grad;
+        tc.fillRect(0, top, wide, high - top);
         label(
           tc,
-          caption,
+          lyric,
           wide / 2,
-          bottom - lyricH / 2,
+          bottom - blockHeight / 2,
           maxWidth,
-          lyricSize,
+          size,
           font,
           "#fbf8f0",
           "center",
           true,
         );
+      }
       tc.restore();
     }
     return target;

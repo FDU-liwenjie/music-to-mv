@@ -16,10 +16,16 @@ def main():
     parser.add_argument("directory", type=Path)
     parser.add_argument("--mode", required=True, choices=["narrative", "lyric-visual"])
     parser.add_argument("--style", required=True, choices=[
-        "pixel", "riso", "watercolor", "papercut", "lowpoly", "typography"
+        "pixel", "riso", "watercolor", "papercut", "lowpoly", "typography", "cinematic"
     ])
     parser.add_argument("--title")
+    parser.add_argument("--art", type=Path, help="copy a JPG or PNG as the first shot's photographic plate")
     args = parser.parse_args()
+    plate = args.art.expanduser().resolve() if args.art else None
+    if args.style == "cinematic" and plate is None:
+        parser.error("--style cinematic needs --art PATH to a local JPG or PNG")
+    if plate and (not plate.is_file() or plate.suffix.lower() not in {".jpg", ".jpeg", ".png"}):
+        parser.error("--art must be an existing JPG or PNG photograph")
     source = args.audio.expanduser().resolve()
     dest = args.directory.expanduser().resolve()
     if not source.is_file() or dest.exists():
@@ -47,6 +53,12 @@ def main():
                 "setting": "station", "action": "wait", "motif": "letter", "emotion": "calm",
             }],
         }
+        if plate:
+            asset_dir = project / "assets"
+            asset_dir.mkdir()
+            asset = asset_dir / ("shot-01" + plate.suffix.lower())
+            shutil.copyfile(plate, asset)
+            data["scenes"][0]["art"] = asset.relative_to(project).as_posix()
         write_json(project / "project.json", data)
         project.rename(dest)
     print(dest / "project.json")

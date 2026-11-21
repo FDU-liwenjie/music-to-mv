@@ -80,6 +80,52 @@ function validateProject(p) {
         within(s.intensity, 0, 1),
         "scene.intensity must be between 0 and 1",
       );
+    const field = "scene " + (i + 1);
+    const photographic = (s.style || p.style) === "cinematic";
+    if (photographic) {
+      check(
+        typeof s.art === "string" && /\.(jpe?g|png)$/i.test(s.art),
+        field + ".art requires a JPG or PNG photograph",
+      );
+      check(
+        s.artMode == null || s.artMode === "background",
+        field + ".artMode must be background for a photographic plate",
+      );
+    }
+    if (s.framing != null) {
+      const f = s.framing;
+      check(
+        photographic && typeof f === "object" && !Array.isArray(f),
+        field + ".framing requires a cinematic scene and an object",
+      );
+      check(
+        Object.keys(f).every((k) => ["from", "to", "ease"].includes(k)),
+        "Unknown key in " + field + ".framing",
+      );
+      for (const name of ["from", "to"]) {
+        if (name === "to" && f[name] === undefined) continue;
+        const a = f[name];
+        check(
+          Array.isArray(a) &&
+            a.length === 3 &&
+            within(a[0], 0, 1) &&
+            within(a[1], 0, 1) &&
+            Number.isFinite(a[2]) &&
+            a[2] >= 1,
+          field +
+            ".framing." +
+            name +
+            " expects [centerX 0..1, centerY 0..1, zoom >=1]",
+        );
+      }
+      if (f.ease != null)
+        list(f.ease, ["smooth", "linear", "hold"], field + ".framing.ease");
+    }
+    if (s.rain != null)
+      check(
+        photographic && within(s.rain, 0, 1),
+        field + ".rain requires a cinematic scene and an intensity from 0 to 1",
+      );
     if (s.layers != null) {
       check(Array.isArray(s.layers), "scene.layers must be an array");
       for (const layer of s.layers) {
@@ -87,6 +133,20 @@ function validateProject(p) {
           layer && typeof layer.src === "string",
           "Each layer needs an image src",
         );
+        if (layer.ease != null)
+          list(layer.ease, ["smooth", "linear", "perspective"], "layer.ease");
+        if (layer.mask != null)
+          check(
+            typeof layer.mask === "string" && /\.(png|svg)$/i.test(layer.mask),
+            "layer.mask requires an alpha SVG or PNG path",
+          );
+        if (layer.space != null) {
+          list(layer.space, ["screen", "plate"], "layer.space");
+          check(
+            layer.space !== "plate" || photographic,
+            "plate-space layers require a cinematic scene",
+          );
+        }
         for (const key of ["pivot", "rotation"])
           if (layer[key] != null) {
             const pair = layer[key];
@@ -122,6 +182,11 @@ function validateProject(p) {
         typeof l.text === "string",
       `Invalid timed lyric ${i + 1}`,
     );
+    if (i > 0)
+      check(
+        l.start >= lyrics[i - 1].end,
+        `Lyric ${i + 1} overlaps the previous line or is out of order; check its timestamps`,
+      );
   }
   const beats = p.beats ?? [];
   check(

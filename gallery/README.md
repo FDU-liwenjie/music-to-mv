@@ -12,13 +12,19 @@
 
 ## 两种拍法的可运行示例
 
-[《雨站》](rain-station.gif) 与 [《两种时间》](out-of-time.gif) 各 12 秒，都以仓库中可重建的原创器乐小样为时间基准。这两个网页动图为静音循环预览。运行工程可以导出带音乐的 MP4。
+[《雨站》](rain-station.gif) 与 [《两种时间》](out-of-time.gif) 都以仓库中可重建的原创器乐小样为时间基准。每支动图长 12 秒，画幅为 480 × 270，以每秒 8 帧静音循环。运行工程可导出带音乐的 MP4。
 
-- [《雨站》工程](../examples/rain-station/project.json) 包含三个剪纸镜头。雪夜站台的人物、红外套、列车和雨丝可分别移动。
-- [《两种时间》工程](../examples/out-of-time/project.json) 以五句原创情绪短文演示歌词视觉。弹簧的张力、双手之间的印章和两只钟的转速分别表现文字含义。
+- [《雨站》剪纸工程](../examples/rain-station/project.json) 包含三个镜头。两个人在站台等车，红外套从一只手递向另一只，一列火车驶入两人之间。新版动图的站牌以箭头指路。
+- [《两种时间》工程](../examples/out-of-time/project.json) 在五个镜头里把情绪画成动作。弹簧受压、心形印章转手、飞鸟逃离，最后两只钟走向不同的时间。新版动图移除了装饰性省略号，钟面用指针和刻度表示时间。
+
+两份工程将创作意图保存在分镜的 `meaning` 字段中。两支动图均已用空歌词时间轴重新渲染，全片以图像叙述。
 
 ```sh
 python3 examples/night-train/make_audio.py
 node render/cli.mjs examples/rain-station/project.json outputs/rain-station.mp4
 node render/cli.mjs examples/out-of-time/project.json outputs/out-of-time.mp4
 ```
+
+### 摄影版《雨站》
+
+[预览](rain-cinema.webp) · [可编辑工程](../examples/rain-cinema/)。摄影式关键帧由 AI 生成。站台底板、带透明遮片的车体、灯影和掠过的窗框分别运动，公开工程配可重建的原创练习曲。
