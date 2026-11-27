@@ -9,7 +9,7 @@
       "action": "reach",
       "motif": "light",
       "emotion": "determined",
-      "meaning": "攒下的情绪，在心里打了个卷。",
+      "meaning": "Unspoken feelings wind into a tight coil.",
       "art": "art/pressure.svg",
       "artMode": "background",
       "layers": [
@@ -49,7 +49,7 @@
       "action": "offer",
       "motif": "letter",
       "emotion": "determined",
-      "meaning": "我把那一点珍惜，放回你手里。",
+      "meaning": "I place the small thing I treasure back in your hand.",
       "art": "art/trade.svg",
       "artMode": "background",
       "layers": [
@@ -102,7 +102,7 @@
       "action": "depart",
       "motif": "leaf",
       "emotion": "restless",
-      "meaning": "等到掌心张开，影子先飞走了。",
+      "meaning": "When your palm opens, the shadow has already flown.",
       "art": "art/run.svg",
       "artMode": "background",
       "layers": [
@@ -142,7 +142,7 @@
       "action": "wait",
       "motif": "light",
       "emotion": "sad",
-      "meaning": "街上仍在落雨，我忘了怎么向前。",
+      "meaning": "Rain keeps falling on the street. I have forgotten how to move forward.",
       "art": "art/loss.svg",
       "artMode": "background",
       "layers": [
@@ -182,7 +182,7 @@
       "action": "return",
       "motif": "clock",
       "emotion": "calm",
-      "meaning": "我们各自的时针，转出了两种明天。",
+      "meaning": "Our clock hands turn toward different tomorrows.",
       "art": "art/time.svg",
       "artMode": "background",
       "layers": [
@@ -245,7 +245,7 @@
       "camera": "push"
     }
   ],
-  "title": "两种时间",
+  "title": "Out of Time",
   "duration": 12,
   "audio": "../night-train/song.wav",
   "lyrics": [],

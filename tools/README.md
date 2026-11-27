@@ -24,7 +24,7 @@ Omit `--language` for language detection or supply a code known to your selected
 ```sh
 python3 tools/lyrics.py show work/review.json
 python3 tools/lyrics.py listen work/review.json 3 -o work/line-03.wav
-python3 tools/lyrics.py edit work/review.json 3 --text "用户核对后的这一句"
+python3 tools/lyrics.py edit work/review.json 3 --text "We meet on the last train"
 python3 tools/lyrics.py edit work/review.json 3 --start 00:12.450 --end 16.200 --shared-boundaries
 python3 tools/lyrics.py show work/review.json
 ```

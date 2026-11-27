@@ -1,5 +1,5 @@
 {
-  "title": "两种时间",
+  "title": "Out of Time",
   "mode": "lyric-visual",
   "style": "blender",
   "lyrics": [],
@@ -11,7 +11,7 @@
       "end": 6,
       "blend": "clocks.blend",
       "firstFrame": 1,
-      "meaning": "两枚实体怀表起初共用读数。蓝钢秒针回落，琥珀秒针继续快走。"
+      "meaning": "Both pocket watches start at the same reading. The blued-steel second hand falls behind as the amber hand races ahead."
     }
   ]
 }

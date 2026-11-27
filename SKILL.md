@@ -1,57 +1,41 @@
 ---
 name: music-to-mv
-description: 用本地歌曲制作可编辑、可重复渲染的音乐视频。用户想给一首歌做 MV、给原唱校歌词和对时间、创作叙事型 MV 或逐句歌词视觉、用 Blender 原生三维、摄影关键帧、像素、孔版印刷、水彩、剪纸、低多边形 3D 或动态歌词演绎音乐时使用。支持中文及其他语言的本地音频、分段试听与逐镜修改。
+description: Make an editable motion-graphics music video from a local song. Use when a user wants a narrative MV or a direct lyric visual, needs to review sung words and timing, or wants to direct shapes, colors, camera framing and rhythm in Blender. Supports instrumental tracks and lyrics in the recording's original language.
 ---
 
 # Music to MV
 
-把用户给出的歌曲做成有镜头、有动作、可以改一行歌词或单个镜头的 MV。与用户用他们的语言合作。把下面的命令从本 Skill 根目录运行，作品保存在用户的项目目录里。先检查 node、npm、python3、ffmpeg 和 ffprobe，首次使用执行 `npm ci`。详细命令见 [工具说明](tools/README.md)。
+Use Blender-native motion graphics for new productions. Build timed cues from paths, fills, masks or foreground occlusion, changes of scale, grouping, rotation and reveals. Make the primary action legible with the sound muted. Keep the recording, its language, the chosen mode and the user's style decisions across revisions. Conduct the conversation in the user's language.
 
-## 1 · 听歌，先让用户看到歌词
+Work from this skill's installation directory. Keep the user's media and work files in a separate production directory. Check for Node.js 20+, Python 3.10+, Blender 4.5 LTS, FFmpeg and ffprobe. Install the bundled Node dependencies with `npm ci` on first use.
 
-1. 定位用户给的音频或有音轨的视频。用 ffprobe 确认音轨、时长和版本，保留原唱和前奏。已有 LRC 或 SRT 就导入；只有音频就用本地 faster-whisper 转录。用户给出纯文本可先导入，告诉他们均分时间仅供起步。若用户明确要做纯音乐，创建空歌词轨后直接讨论构思。
-2. 用 `python3 tools/lyrics.py show 工作目录/review.json` 展示带序号、起止时间的**整份草稿**。长歌可把完整可读文本另存给用户，在聊天里列出存疑行。保留原语种、重复段和人声间隙。不要凭歌名补写漏听的词。
-3. 邀请用户按行号纠正、回听片段、粘贴自己查到的歌词，或提供另一版 LRC/SRT。可先抽听明显错位的行。只改文字时保留原来的时间。逐句复核后，用户明确认可再运行 `approve` 和 `export`；修改后重新校对。尚待确认时先做无字幕构图测试，在聊天里标记待校对。成片只显示当前唱出的原歌词，前奏、间奏与句间留白。把歌词释义、标题、镜头备注、版本号留在项目和对话里。检查素材内的店招、车号、时钟数字、海报和水印，交付前清除画面上的额外文字。
+## Listen and review the lyrics
 
-若识别器装在 Skill 的虚拟环境里，使用该环境的解释器。例如 macOS / Linux 运行 `.venv/bin/python tools/lyrics.py transcribe 歌曲.mp3 -o 工作目录/review.json`。
+- Locate the exact recording. Confirm its length and where the singing starts. Prefer the user's LRC or SRT when available. For audio alone, use the local recognizer. Imported plain text starts with evenly spaced placeholder times that need listening and correction.
+- Show the complete numbered, timed review with `python3 tools/lyrics.py show path/to/review.json`. A long song can have a separate readable review file. Flag uncertain lines, preserve repeats and language, and offer to play individual lines. Let the user paste corrections or lyrics they found online. Keep timing intact for word-only corrections.
+- Run `approve` only after the user accepts the current draft. Then export an SRT and the lyric cues into the project. During review, a picture-only test is useful. For an instrumental, use an empty lyric track and continue with the art discussion. [Lyric review commands](tools/README.md)
 
-## 2 · 请用户挑选演绎方式
+**The only visible words in an MV are the original lyrics at their sung times.** Keep titles, interpretations, style labels, version marks and shot descriptions in the project or conversation. Check the artwork itself for incidental characters. Publish sample prompts, labels, narration and captions in English; preserve the requested language on a specific production.
 
-两种方式并列展示，让用户根据想看的画面来选。已选则沿用。
+## Offer two interpretations of one passage
 
-- **叙事型 MV**。把整段情绪写成人物的一次选择。给出人物、想做的事、阻碍、前后变化，以及一个反复出现但状态会改变的物件。悲伤、浪漫、疯狂都可以拍成故事。
-- **歌词视觉 MV**。从每句歌词里找可见的对象、动作与空间关系。把“手里的东西渐渐远了”画成掌心打开、物件随水退远。字幕可独立开关，关掉字幕也应看得出这句在讲什么。为难以直译的一句给用户看两个具体解释，由他们选。
+Give the user two short treatments of the same phrase unless they have already chosen. A narrative MV follows a character or recurring object through a decision with a visible consequence. A lyric visual depicts the object, action and relationship in a line. For example, two hands on separate dials can move apart to make lost synchrony visible. Mood does not determine the mode.
 
-根据这首歌提两种短构思，各写出在**同一句或同一乐段**会出现的画面，然后询问偏好。用户已给出清楚的主意就直接沿用，不重复提问。
+Ask about what materially changes the picture. A sports or business setting establishes the world; devotion, calm or restlessness establishes the emotional arc. Pixel, print, watercolor or paper can guide the surface. Translate those choices into two concrete treatments with a dominant color, a physical gesture and a change in pace. Respect a selection already made. [Visual direction](references/direction.md)
 
-## 3 · 把审美偏好写成分镜
+## Author the motion score
 
-按 [风格与镜头](references/direction.md) 给出两份可比较的组合，每份只说三件事：主材质、情感如何变化、一个真正会出现在画面里的动作。用户可以只选一份或混搭。把运动感、商务感、痴情、冷静、执着等词落实到角色、场景、色彩、景别、动作或剪辑。用用户自己的话记录选择与禁忌。
+1. Create the project with `python3 scripts/new_project.py "/path/song.wav" "/path/my-mv" --mode narrative`, or select `lyric-visual`. The default produces a motion score and a Blender scene. Record the actual copied audio filename. Export the reviewed lyrics to `project.json`. Use `tools/beats.py` when accent candidates would help, and listen before choosing which ones deserve motion.
+2. Describe each cue in terms of its subject, starting state, action, ending state and musical or lyrical trigger. Keep a recognizable element across a cut. Use a hold before a reveal, a shared pivot to show connection or an occluding shape to carry an exit. A repeated chorus should advance the action.
+3. Replace the starter cues with artwork for this song. Edit `motion.json` using the documented score fields. Object-key times are local to each cue. Choose a framing that makes each action visible. For a handoff, establish the distance between the people, come close enough to see who grips the fabric, then return to the platform when the train clears. For a comparison, a held camera can keep both subjects legible. Compare the opening, the strongest beat and a quiet interval at phone size. Check silhouettes, overlaps and color contrast. [Score fields and examples](scripts/MOTION.md)
+4. Run `python3 scripts/build_mg.py /path/my-mv/motion.json --output /path/my-mv/scene.blend` after editing the score. Use the native scene directly for final refinements when practical. Preserve hand-edited .blend variants independently of generated outputs. Previously authored projects with an explicit renderer or supplied native scene keep their own path. [Blender details](references/blender.md)
 
-两种演绎方式都默认在 Blender 里拍摄。用户选定像素、孔版、水彩等图形材质时，沿用他们选择的材质与渲染方法。按 [Blender 镜头制作](references/blender.md) 建立模型、材质、灯和真实摄影机，用关键帧或绑定做物件和角色动作。用一张广角和一张近景检查体积、接触面、光源与空间关系。用户只提供歌曲时，由 Skill 根据已选分镜编写 Blender Python 建模脚本、在后台运行并保存 .blend，再把自建场景接入歌曲时间轴。用户提供模型或 .blend 时可以直接接入。交付可重新打开的 .blend 和带原声的小样；有程序化建模脚本时一并保留。
+## Preview and deliver
 
-创建项目。用户还在选风格时，可以先在独立工作目录审核歌词，选定后再把审核结果导入项目。
-
-```sh
-python3 scripts/new_project.py "/路径/我的歌.mp3" "/路径/我的MV" --mode narrative --style blender --blend "/路径/已保存的场景.blend"
-python3 tools/lyrics.py export "/路径/review.json" --srt "/路径/我的MV/lyrics.srt" --project "/路径/我的MV/project.json"
-python3 tools/beats.py "/路径/我的MV/song.mp3" -o "/路径/我的MV/accents.json" --project "/路径/我的MV/project.json"
-```
-
-按主歌、副歌、间奏写分镜并编辑 project.json。核对每段的起止秒数、对象或人物、动作、入画与离画状态，以及改镜头的理由。替换初始化脚本里的占位镜头。按镜头里的主体选素材。选定摄影材质、需要看清人脸、手、衣料、车体或夜景反光时，优先用摄影级 JPG/PNG 原画或授权照片；逐镜设计色光、动作与取景。图形剪纸和歌词意象可用 SVG。连续的手部交接、轮对或大角度环绕需要连续动作素材或带绑定的三维模型。摄影关键帧能做取景与分层视差，交付时说清动作来自哪些图层或镜头剪接。没有合适词汇时改素材或编写新的画面逻辑。模板的公共场景仅用于起步。字段和例子见 [风格与镜头](references/direction.md)。
-
-## 4 · 做小样，再完成全曲
-
-先挑有人声、最能展示构思的 8–15 秒渲染有声小样。命令中的起点和长度要落在歌曲及分镜的有效范围内。
+Render 8–15 seconds from an expressive passage, or a shorter complete phrase when appropriate. The range must fit the audio and the score. For example:
 
 ```sh
-node render/cli.mjs "/路径/我的MV/project.json" "/路径/我的MV/preview.mp4" --start 22 --duration 12 --width 960 --height 540 --fps 24
+node render/cli.mjs /path/my-mv/project.json /path/my-mv/preview.mp4 --start 12 --duration 8 --width 960 --height 540 --fps 24
 ```
 
-交付可播放的小样，告诉用户从原曲哪一秒起播，邀请他们针对歌词、人/物的动作、颜色或镜头节奏说一项最想改的地方。按具体反馈局部修改。收到全片制作指示后，补齐分镜到歌曲结尾，再运行：
-
-```sh
-node render/cli.mjs "/路径/我的MV/project.json" "/路径/我的MV/final.mp4" --width 1920 --height 1080 --fps 30
-```
-
-用 ffprobe 检查音视频流和时长。抽看每次切镜两侧、第一句、重复副歌、结尾及最长字幕，试听确认字幕跟原唱、人声起句与切镜重音分别对齐。叙事片要看得出人物的行动发生了什么变化。歌词视觉要看得出每句的主要对象。拿掉字幕试看一遍，确认人物看向哪里、关键道具在谁手里、车辆沿哪个方向行进。并排看几个镜头，检查同一件道具的颜色与光源是否连续。交付 MP4、可编辑项目及使用过的素材，Blender 镜头附 .blend，带字幕时附 SRT。若是小样，明确标出长度和覆盖段落。
+Share the playable excerpt, its source range and one concrete decision the user can change. Once directed to finish, cover the remaining recording and export the complete piece. Verify the streams and duration with ffprobe. Inspect the frames around cuts, large movements, sung entrances and lyric gaps. Listen across a repeated line. Deliver the MP4, subtitle file when applicable, the motion score, the song project, and the editable Blender scene with any required assets. Keep public examples and their media separate from personal recordings.

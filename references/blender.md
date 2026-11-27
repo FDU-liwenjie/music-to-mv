@@ -1,49 +1,58 @@
-# 用 Blender 拍一段音乐
+# Making motion graphics in Blender
 
-在本 Skill 里，Blender 负责舞台、材质、灯光、摄影机、角色与道具的动作。项目里的歌曲时间轴负责决定何时进入哪个镜头，以及何时显示哪一句原歌词。叙事片和歌词视觉都可以选 Blender。
+The music project has two timelines. `motion.json` describes what moves, when it moves and how it looks. Building the score creates editable geometry and keyframes in Blender. `project.json` places the rendered picture, the original audio and the reviewed lyric cues on the song timeline.
 
-## 从样片开始
+## Work on one phrase
 
-安装 Blender 4.5 LTS，准备好项目首页列出的 Node.js、Python、FFmpeg 依赖。从仓库根目录运行：
+1. Listen to a short section and mark the start of the vocal, the strongest musical accent and the following rest. Give each a time in seconds from the start of the recording.
+2. Pick a gesture the viewer can follow. To show two rhythms slipping apart, draw two hands on one dial. Start them at the same angle, hold through the pickup, then move one hand ahead. A stationary outer ring gives the viewer a reference for the separation.
+3. In the motion score, set the cue boundaries on the song timeline. Give each shape a readable object ID. Put the moving hand and its details under a shared pivot. Set animation keys in seconds from the beginning of the cue. A straight angular sweep reads as steady time. A held pose followed by a jump reads as a missed beat.
+4. Build the scene, open it in Blender and scrub across the change. The Outliner exposes the shapes and groups. Use the Graph Editor to inspect the motion. Save any hand-edited version under a separate filename before rebuilding from the score.
+
+From the repository root, these commands rebuild an example into a separate Blender file and render a frame from the example project. The audio generator creates the original practice recording used by the published projects.
 
 ```sh
-npm ci
 python3 examples/night-train/make_audio.py
-node render/cli.mjs examples/blender-station/project.json outputs/rail.png --start 5 --width 960 --height 540
-node render/cli.mjs examples/blender-station/project.json outputs/rail.mp4 --width 960 --height 540 --fps 24
+python3 scripts/build_mg.py examples/mg-out-of-time/motion.json --output outputs/out-of-time-study.blend
+node render/cli.mjs examples/mg-out-of-time/project.json outputs/out-of-time.png --start 3 --width 960 --height 540
 ```
 
-命令会查找 PATH 里的 `blender`，在 macOS 还会查找系统和个人 Applications 目录。自定义安装可将环境变量 `BLENDER_BIN` 指向可执行文件。打开 [雨后末班车的 .blend 工程](../examples/blender-station/rain-station.blend)，切换到摄影机视图并播放时间轴，可直接看三台摄影机的剪接。调整模型位置或镜头关键帧后保存，再运行相同命令即可。
+The still command uses the `blend` path recorded in the example's `project.json`. To preview an edit to the separate study file, use Blender's camera view or point a copy of the project at the edited file. The score reference lists the supported primitives, animation channels and coordinate system. [Motion score reference](../scripts/MOTION.md)
 
-## 以镜头为单位建模
+## Check the motion against the recording
 
-- **叙事型 MV**。先说清这段歌里谁做了什么，以及镜头结束时什么已经改变。《雨后末班车》用车头接近、车窗掠过和长凳上的红外套讲离开。建立轨距、月台高度和轮对接触点，列车才有重量；摄影机是否移动，取决于观众要看车的速度、车内灯光还是留下的衣服。
-- **歌词视觉 MV**。把一句歌词译成空间中可看见的变化。要表达“不同步”，可以让两根秒针从同一刻度出发，按不同速度转动，把第一次明显错开的位置剪在唱出关键词的附近。含义、镜号和场记均保留在工程里，两只表盘可以只用刻度。
-- **人物连续动作**。需要让手接住衣服时，建立手和衣领的接触点，分别定伸手、承重、松手的姿态。用宽景检查两个人的站位，用近景检查手指是否穿模。相机变化也要留住原来运动的方向感。
-- **色光与材质**。一个可控的颜色变化要能指出光源。钢轨吃到车头灯的暖反射，棚下的衣服吃到侧面的钨丝灯，远山保留冷色。出小样前抽看切点两侧与动作极值，检查皮肤、衣料、拉丝金属和透明材质在运动中是否稳定。
+Inspect the frame before the action, the strongest pose and the first frame of the next cue. Make sure the shape reads at the intended display size. Check which silhouette is visible when objects overlap, and whether a foreground object completely hides the action. Play the same range with the recording to judge the cut. A held shot can give a vocal entrance room even when the beat detector finds several accents.
 
-## 接入自己制作的场景
-
-先在 Blender 内建立渲染摄影机，设定原生帧率和时间轴。多个机位可以绑定在不同时间标记上。把需要的模型、材质、纹理随工程保存；使用外部纹理或链接资源时，在 Blender 内打包可打包的资源，并保持其余资源的相对路径。
+The same CLI renders a PNG at a song time or an MP4 over an interval. For example, this exports four seconds with the recording from the lyric-visual project.
 
 ```sh
-python3 scripts/new_project.py "/path/song.wav" "/path/my-mv" --style blender --mode narrative --blend "/path/to/shot.blend"
+node render/cli.mjs examples/mg-out-of-time/project.json outputs/out-of-time-detail.mp4 --start 1 --duration 4 --width 960 --height 540 --fps 24
 ```
 
-`project.json` 中可以整首使用 `style: "blender"`，也可以只在某一镜指定。每镜用 `blend` 引用相对路径，`firstFrame` 指定该镜在 Blender 源工程的起始帧，默认 1。`start`、`end` 沿用歌曲的绝对秒数。下面这段把歌曲第 8 至 12 秒接到源工程的第 97 帧开始处。
+## Bring an existing Blender scene
+
+A project can also use a hand-built Blender file with modeled sets, lighting and camera animation. Place a render camera, set the native frame rate, and bind cameras to timeline markers for cuts. Pack external textures where possible, and keep remaining linked assets at portable relative paths. Install Blender 4.5 LTS on your PATH or set `BLENDER_BIN` to the executable. On macOS the tools also look in the system and user Applications folders.
+
+```sh
+python3 scripts/new_project.py "/path/to/song.wav" "/path/to/my-mv" --mode narrative --style blender --blend "/path/to/shot.blend"
+```
+
+The project can set `style` to `blender` for the whole song or for an individual shot. Each such shot has a `blend` path relative to the project. `firstFrame` defaults to 1. For example, these four seconds of song begin on frame 97 of the Blender file.
 
 ```json
 {"start": 8, "end": 12, "style": "blender", "blend": "assets/shot-01.blend", "firstFrame": 97}
 ```
 
-渲染器以源工程的每秒帧数映射到歌曲时间；改变导出的 fps 仍保持相同的播放速度。初始化工程会把第一镜铺到歌曲结尾；如果源动画较短，请在最后一个有效动作处切镜，再接下一镜。场景决定灯光、动画和颜色，最终的歌词与原唱采用统一的时间轴。材质中嵌入的招牌、纹理上的字符要在建模阶段清理。针对一处反馈，可以在同一条命令上加 `--start 8 --duration 2`，只检查该片段。
+Playback follows the native scene frame rate. Changing the export frame rate preserves the speed of its animation. The initial shot covers the recording. If the modeled action is shorter, cut to another shot when that action ends. Surface lettering is part of the model, so review sign textures and geometry before rendering a wordless sequence.
 
-## 从代码重建三维工程
+## Revisit the modeled studies
 
-公开样片直接附带可编辑的 .blend。需要改变建模逻辑时，进入相应示例目录阅读 Python 源码。下面的命令在仓库根目录运行。macOS 的个人应用目录安装可以把开头的 `blender` 换成 `"$HOME/Applications/Blender.app/Contents/MacOS/Blender"`。
+*Last Train After the Rain* follows a train across a wet platform and ends on a red coat left on a bench. Open its camera view to inspect how the track-level camera, moving train, reflected lamps and final close-up share the same three-dimensional set. *Out of Time* uses two pocket watches with different hand speeds. These projects include the native Blender files and their Python modeling sources. [Station study](../examples/blender-station/) · [Watch study](../examples/blender-clocks/)
+
+To regenerate the first study from its Python models, run the following from the repository root.
 
 ```sh
 blender --background --factory-startup --python-exit-code 1 --python examples/blender-station/build.py -- --output outputs/custom-station.blend
 ```
 
-[Blender 官方下载](https://www.blender.org/download/) · [后台渲染文档](https://docs.blender.org/manual/en/4.5/advanced/command_line/render.html)
+For installation and command-line options, see the Blender documentation. [Download Blender](https://www.blender.org/download/) · [Background rendering](https://docs.blender.org/manual/en/4.5/advanced/command_line/render.html)

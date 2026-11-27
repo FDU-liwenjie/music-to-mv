@@ -1,33 +1,44 @@
-# 从风格词到镜头
+# Directing movement for a song
 
-第一轮请用户选想看的变化。“同一个人下班后在空站台等了三班车”可以拍出执着；“手放开，车门缓慢合上”则更接近释然。需求里只有“伤感”时，这两种画面的差别比追加形容词更容易讨论。
+Start with one sung phrase. In a narrative treatment, a passenger keeps a paper ticket through three departures, then finally lets go. In a lyric visual for the same feeling, a loop tightens each time the refrain returns and opens on the last sustained note. Both can feel sad. Ask which change the listener wants to watch.
 
-| 视觉材质 | 可见的处理 | 可以试的镜头 |
-| --- | --- | --- |
-| 原生三维 `blender` | Blender 中的几何、材质、灯光与动画摄影机 | 从轨面抬头看头灯，跟随车头转向侧窗，保留近处立柱的遮挡与视差 |
-| 摄影关键帧 `cinematic` | 同一场景的摄影原画，主体与远景分层，局部取景 | 车头沿钢轨消失点接近，站台固定，接到窗后的人物反应 |
-| 像素 `pixel` | 有限色阶、分格边缘 | 车窗的黄灯在格点之间逐个熄灭 |
-| 孔版印刷 `riso` | 两三层专色、套印偏移和网点 | 两只手靠近时，交叠的油墨产生第三种颜色 |
-| 水彩笔刷 `watercolor` | 透明叠色、湿边和留白 | 雨伞移开后，雨中的颜色重新晕开 |
-| 剪纸 `papercut` | 大色块剪影、纸层投影和遮挡 | 人从两张楼宇剪影间穿过，把一件衣服留在前景 |
-| 低多边形 3D `lowpoly` | 立体几何、透视摄影机和面片明暗 | 从高处俯看月台，摄影机侧移时人物和远山分开 |
-| 动态字体 `typography` | 字级、位置、出现次序和节奏 | 只排当句原词，保留留白，间奏把版面还给图形 |
+## Turn a preference into a visible choice
 
-## 决定画面如何随歌曲改变
-
-| 跟用户聊什么 | 如何变成可编辑的内容 |
+| Ask the listener | Try it on screen |
 | --- | --- |
-| 人物所处的世界 | 运动感可以用弯道、起跑线和跟拍；商务感可以用空办公楼、玻璃门、工牌与规整构图。可为同一个风格绘制不同 SVG。 |
-| 情绪从哪里走到哪里 | 冷静到疯狂可以从固定远景逐渐逼近，副歌才让颜色越出轮廓；痴情到释然可以让同一物件从紧握变为放手。 |
-| 谁在看，以及距离 | 旁观者远景保留空旷空间；第一人称用衣袖、手心或车窗倒影入画。 |
-| 什么时候动 | 执着可以让同一动作在副歌重复，每次让人物更近一点。把最显眼的一次动作留给听得见的重音。 |
-| 字幕如何出现 | 逐句字幕跟人声；动态歌词排版只用当句原词，标题、释义和地点留在镜头表。设定安全区与清晰的文字底色。 |
+| What world does the song inhabit? | For a sports setting, use curved tracks, lane markings and a moving viewpoint. An office can use a glass grid, an access card and the repeating rhythm of closing doors. |
+| Where does the feeling begin and end? | For growing restlessness, let a single level line vibrate, split, then cross the frame on the chorus. For devotion giving way to acceptance, return to the same clasped shape and open it a little further each time. |
+| Whose attention are we following? | A distant observer can see two figures and the gap between them. A first-person shot can fill the frame with a sleeve, a hand and the corner of the coat it is holding. |
+| When should the gesture land? | Time a release to the vocal consonant, an impact to the kick, or a cut to the silence after the phrase. Pick the moment by listening to that particular recording. |
+| What should the surface feel like? | A pixel treatment can step through positions on a grid. A risograph print can let two flat inks make a third color where they overlap. A watercolor treatment can spread a wash around a dry center. |
+| How should the words appear? | Reserve a legible part of the frame for the approved sung line. A lyric visual can communicate the hook with changing geometry even during a wordless refrain. |
 
-## 时间轴和素材
+## Score a short sequence in Blender
 
-项目保存 UTF-8 JSON，时间单位是从**原录音**开头算起的秒。预览裁剪仍沿用这套时间。根字段有 `title`、项目相对路径 `audio`、`style`、`mode`、`scenes`、`lyrics` 和 `beats`。歌词工具写入 `lyrics`（start、end、text），低频分析工具建议 `beats`。两者分别可改。
+Give each cue one subject, an initial state, an action and a final pose. For a handoff, establish the coat's color before the second hand enters. Hold both hands on it for a moment, release the first hand, and carry that color through the cut. For a direct reading of “out of time,” keep a stationary tick mark visible beside each moving hand so the difference in speed is easy to read.
 
-每个镜头填写起止时间、场景、动作、物件和情绪；歌词视觉可以加 `meaning` 作为幕后创作笔记。各镜头按播放顺序接续。下面的分镜可以作为一个四秒镜头写入 `scenes`：
+- **Silhouette and layers.** Block the subject with a small number of shapes. Place an occluding window frame above a passenger to reveal the face as the train moves. Parent details to the subject that carries them.
+- **Rhythm.** Give a strong pose enough screen time to register before the next cut. To build persistence, repeat the action with a shorter pause or greater reach at each return of the chorus.
+- **Color.** Give a recurring object one recognizable hue. Change the background or surrounding shapes when the location changes. Test the strongest pose as a small still.
+- **Camera.** Hold the framing when relative motion between subjects carries the meaning. A slow push or lateral move serves a shot when it reveals a second object, a change of scale or a new relationship.
+- **Editing.** Shape geometry, grouping, motion and color belong in the score. The project places shots, audio and approved lyrics on the original recording's clock. The `meaning` field can hold production notes, including what the audience should notice. [Motion score reference](../scripts/MOTION.md) · [Blender workflow](blender.md)
+
+## Reopening earlier projects
+
+The earlier studies use the same song-relative seconds in UTF-8 JSON. Each `project.json` includes `title`, a project-relative `audio` path, `style`, `mode`, ordered `scenes`, timed `lyrics` and a list of `beats`. The lyric tool writes reviewed cues with `start`, `end` and `text`. Bass analysis suggests beat times for the editor. Trimming a preview preserves the original time coordinates. [Two starter projects](../examples/night-train/) · [Lyric and rhythm tools](../tools/README.md)
+
+| Existing style | What is editable |
+| --- | --- |
+| `blender` | Geometry, materials, lights, camera and animation in the native Blender file |
+| `cinematic` | The photographic plate, crop, masked image layers and optional rain |
+| `pixel` | Limited steps in value and edges aligned to a pixel grid |
+| `riso` | Spot colors, halftone dots and misregistered ink layers |
+| `watercolor` | Transparent washes, wet edges and exposed paper |
+| `papercut` | Silhouettes, foreground cutouts, occlusion and cast shadows |
+| `lowpoly` | Faceted geometry, perspective and camera movement |
+| `typography` | Placement, scale and timing of the active lyric |
+
+For an illustrated scene, use the built-in composition or add project-relative SVG/PNG artwork. Choose `artMode: "background"` for a backdrop and `"foreground"` for an overlay. For example, this four-second shot can be inserted into the scene list of an illustrated project that contains the referenced file.
 
 ```json
 {
@@ -37,41 +48,19 @@
   "action": "release",
   "motif": "boat",
   "emotion": "calm",
-  "meaning": "纸船离开手心",
+  "meaning": "A paper boat leaves an open palm.",
   "art": "art/paper-boat.svg",
   "artMode": "foreground"
 }
 ```
 
-`art` 指向项目内的实际 SVG 或 PNG；省略 `art` 和 `artMode` 即用内置图形。以背景布景出现时选择 `background`。用 `foreground` 时可绘制带透明通道的近景道具或完整的美术画面。将所有素材跟 project.json 一起交付，确保换电脑后还能修改。
+| Illustrated scene field | Values |
+| --- | --- |
+| `setting` | `station`, `street`, `coast`, `room`, `bridge`, `mountain`, `stage` |
+| `action` | `wait`, `walk`, `offer`, `release`, `return`, `reach`, `depart`, `unfold` |
+| `motif` | `letter`, `boat`, `flower`, `train`, `umbrella`, `light`, `clock`, `leaf`, `mountain` |
+| `emotion` | `calm`, `romantic`, `sad`, `restless`, `determined`, `wild` |
 
-常用的内置分镜词：
+A scene can override the project style. Its `camera` can be `still`, `push`, `pan-left` or `pan-right`. Its `intensity` ranges from 0 to 1. A `palette` of three to five six-digit hex colors can apply to the project or to one scene. In `layers`, each item has a `src` and optional `from` and `to` transforms. The three values give horizontal offset, vertical offset and scale. The default screen coordinates are based on a 960 × 540 frame. For example, `{"src":"art/coat.svg","from":[-80,0,1],"to":[20,0,1.04]}` moves an isolated coat to the right while bringing it slightly closer. [Paper-cut example](../examples/rain-station/) · [Illustrated lyric visual](../examples/out-of-time/)
 
-- 场景：`station`、`street`、`coast`、`room`、`bridge`、`mountain`、`stage`。
-- 动作：`wait`、`walk`、`offer`、`release`、`return`、`reach`、`depart`、`unfold`。
-- 物件：`letter`、`boat`、`flower`、`train`、`umbrella`、`light`、`clock`、`leaf`、`mountain`。
-- 情绪：`calm`、`romantic`、`sad`、`restless`、`determined`、`wild`。
-
-运动、商务、痴情等偏好属于创作输入，由 Skill 翻译成镜头、素材、情绪与时间设计。把“执着”做成一组有推进的动作，比把这个词写进一个未识别的 JSON 字段更能改变成片。两个完整的入门工程在 [原创练习目录](../examples/night-train/)。
-
-### 逐镜控制
-
-一镜需要更具体的动作时，`camera` 可用 `still`、`push`、`pan-left`、`pan-right`；`intensity` 取 0 至 1。`palette` 可填 3 至 5 个六位十六进制色值，放在根层影响全片，放在镜头内只改这一镜。每镜还能单独指定 `style`。
-
-分层素材写在镜头的 `layers` 数组里。每项给出 `src`，以及起点 `from` 和终点 `to`，三项数字分别是 960 × 540 设计画布上的横移、纵移与缩放。比如 `{"src":"art/coat.svg","from":[-80,0,1],"to":[20,0,1.04]}` 会让单独画在透明底上的外套向右移交。两份 [雨站](../examples/rain-station/) 与 [不同步](../examples/out-of-time/) 工程展示了如何让手、衣服、时钟指针分别运动。
-
-
-### 摄影镜头如何设计
-
-先写下观众这时应该看谁或看什么，再决定要不要移动镜头。例子见 [《雨站》摄影工程](../examples/rain-cinema/project.json)。
-
-| 镜头 | 视线和表演 | 色光与运动 |
-| --- | --- | --- |
-| 空轨 → 站台两人 | 先看路往哪里去，再看两人之间的距离和男人手里的红衣 | 湿轨的冷蓝与棚下钨丝灯的暖光建立空间，进入人声后轻推 |
-| 接衣近景 | 从左手托住的衣角，沿缝线看向右手捏住的衣领 | 暖肤色与暗红占据画面，一次小幅横移就够 |
-| 列车逼近 | 让司机窗、头灯、车钩、轮架和站台边缘同时可辨 | 低机位固定，车体、灯影沿消失点接近，钢轨和树保持原位 |
-| 车窗后的人 | 掠过的窗框露出她抱着的外套，完成道具交接 | 衣服的红跟上一镜呼应，最后把视线留在脸上 |
-
-摄影模式的 `art` 填无字的 JPG / PNG 原画。归一化的 `framing.from` 和 `framing.to` 分别为起止的 [水平中心, 垂直中心, 放大倍数]。中心 0–1，倍数从 1 起；省略运动保持定机。可以逐镜设 `rain` 为 0–1。摄影图的原色由素材决定。
-
-需要让列车独立移动时，准备一张无车站台底板，将车体图与同构图的透明遮片放入 `layers`。图层 `space: "plate"` 使用底板像素单位，与取景同步；`space: "screen"` 使用画框坐标，适合近处的窗框。遮片的透明度控制哪些像素可见。`ease: "perspective"` 依物体离摄影机的距离改变投影大小，适合朝镜头靠近的刚性物体。沿轨道消失点缩放时，要联动图层中心位移与缩放。手指弯曲、张口、转身等连续表演需要单独的动作素材。
+For a photographic shot, use a JPG or PNG plate in `art`. Its optional `framing.from` and `framing.to` arrays give normalized horizontal center, normalized vertical center and zoom. Centers range from 0 to 1 and zoom starts at 1. Omitting the transform leaves the camera stationary. `rain` ranges from 0 to 1. For a moving train, composite the masked train over an empty platform. A layer with `space: "plate"` uses source pixels and follows the camera crop. A layer with `space: "screen"` can supply a passing window frame. The mask's alpha selects the visible pixels. Set `ease: "perspective"` on a rigid object approaching the camera, and align its translation and scale to the vanishing point. [Photographic example](../examples/rain-cinema/project.json)

@@ -134,7 +134,7 @@ bpy.ops.wm.save_as_mainfile(filepath=sys.argv[-1])
         { ...native, style: "blender" },
         { start: 1, end: 2 },
       ];
-      project.lyrics = [{ start: 0.75, end: 0.875, text: "海" }];
+      project.lyrics = [{ start: 0.75, end: 0.875, text: "Sea" }];
       writeFileSync(json, JSON.stringify(project));
       const options = ["--width", "128", "--height", "72", "--fps", "8"];
       call(process.execPath, [

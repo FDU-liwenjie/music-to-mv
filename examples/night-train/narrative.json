@@ -1,5 +1,5 @@
 {
-  "title": "末班渡船",
+  "title": "The Last Ferry",
   "audio": "song.wav",
   "lyrics": [],
   "beats": [
@@ -38,7 +38,7 @@
       "action": "unfold",
       "motif": "letter",
       "emotion": "calm",
-      "meaning": "她在信纸上折出了船头。"
+      "meaning": "She folds the tip of her letter into the bow of a boat."
     },
     {
       "start": 4,
@@ -47,7 +47,7 @@
       "action": "release",
       "motif": "boat",
       "emotion": "restless",
-      "meaning": "到了桥中央，她松开手指。"
+      "meaning": "She reaches the middle of the bridge and opens her fingers."
     },
     {
       "start": 8,
@@ -56,7 +56,7 @@
       "action": "depart",
       "motif": "boat",
       "emotion": "romantic",
-      "meaning": "纸船向海面漂去。"
+      "meaning": "The paper boat drifts out to sea."
     }
   ]
 }

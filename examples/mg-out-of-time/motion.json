@@ -1,0 +1,4291 @@
+{
+  "version": 1,
+  "fps": 24,
+  "duration": 12.0,
+  "palette": {
+    "ground": "#EFDFC1",
+    "paper": "#FFF0D2",
+    "faint": "#D6C5A7",
+    "field": "#E5D3B2",
+    "ink": "#15353B",
+    "cyan": "#77C0BE",
+    "sky": "#BDE4CF",
+    "cool": "#244D54",
+    "blue": "#3D8087",
+    "oxide": "#8E4138",
+    "orange": "#EE744D",
+    "ember": "#DD5E42",
+    "gold": "#F7B367",
+    "cream": "#FDEBC8",
+    "black": "#1B393B"
+  },
+  "background": "ground",
+  "camera": {
+    "position": [
+      0,
+      0
+    ],
+    "width": 15.22,
+    "keys": [
+      {
+        "t": 0.0,
+        "position": [
+          0,
+          0.01
+        ],
+        "width": 14.48
+      },
+      {
+        "t": 4.56,
+        "position": [
+          0.02,
+          0.01
+        ],
+        "width": 14.12
+      },
+      {
+        "t": 12.0,
+        "position": [
+          0.11,
+          0.04
+        ],
+        "width": 15.38
+      }
+    ]
+  },
+  "cues": [
+    {
+      "name": "A common phase",
+      "start": 0,
+      "end": 12.0,
+      "background": "ground",
+      "objects": [
+        {
+          "id": "Diagonal-paper-inlay",
+          "shape": "polygon",
+          "color": "field",
+          "z": 0.06,
+          "points": [
+            [
+              -9,
+              -4.7
+            ],
+            [
+              -9,
+              -2.31
+            ],
+            [
+              9,
+              1.75
+            ],
+            [
+              9,
+              -4.7
+            ]
+          ]
+        },
+        {
+          "id": "Upper-fold-line",
+          "shape": "polyline",
+          "color": "faint",
+          "z": 0.08,
+          "points": [
+            [
+              -8.65,
+              3.45
+            ],
+            [
+              -2.92,
+              3.45
+            ],
+            [
+              -2.48,
+              3.78
+            ],
+            [
+              8.65,
+              3.78
+            ]
+          ],
+          "stroke": 0.022
+        },
+        {
+          "id": "Left-ledger-line-0",
+          "shape": "polyline",
+          "color": "faint",
+          "z": 0.1,
+          "points": [
+            [
+              -8.8,
+              -0.44
+            ],
+            [
+              -3.7,
+              -0.44
+            ]
+          ],
+          "stroke": 0.014
+        },
+        {
+          "id": "Right-ledger-line-0",
+          "shape": "polyline",
+          "color": "faint",
+          "z": 0.1,
+          "points": [
+            [
+              3.65,
+              -0.44
+            ],
+            [
+              8.8,
+              -0.44
+            ]
+          ],
+          "stroke": 0.014
+        },
+        {
+          "id": "Left-ledger-line-1",
+          "shape": "polyline",
+          "color": "faint",
+          "z": 0.1,
+          "points": [
+            [
+              -8.8,
+              -0.315
+            ],
+            [
+              -3.7,
+              -0.315
+            ]
+          ],
+          "stroke": 0.014
+        },
+        {
+          "id": "Right-ledger-line-1",
+          "shape": "polyline",
+          "color": "faint",
+          "z": 0.1,
+          "points": [
+            [
+              3.65,
+              -0.315
+            ],
+            [
+              8.8,
+              -0.315
+            ]
+          ],
+          "stroke": 0.014
+        },
+        {
+          "id": "Left-ledger-line-2",
+          "shape": "polyline",
+          "color": "faint",
+          "z": 0.1,
+          "points": [
+            [
+              -8.8,
+              -0.19
+            ],
+            [
+              -3.7,
+              -0.19
+            ]
+          ],
+          "stroke": 0.014
+        },
+        {
+          "id": "Right-ledger-line-2",
+          "shape": "polyline",
+          "color": "faint",
+          "z": 0.1,
+          "points": [
+            [
+              3.65,
+              -0.19
+            ],
+            [
+              8.8,
+              -0.19
+            ]
+          ],
+          "stroke": 0.014
+        },
+        {
+          "id": "Left-ledger-line-3",
+          "shape": "polyline",
+          "color": "faint",
+          "z": 0.1,
+          "points": [
+            [
+              -8.8,
+              -0.065
+            ],
+            [
+              -3.7,
+              -0.065
+            ]
+          ],
+          "stroke": 0.014
+        },
+        {
+          "id": "Right-ledger-line-3",
+          "shape": "polyline",
+          "color": "faint",
+          "z": 0.1,
+          "points": [
+            [
+              3.65,
+              -0.065
+            ],
+            [
+              8.8,
+              -0.065
+            ]
+          ],
+          "stroke": 0.014
+        },
+        {
+          "id": "Left-ledger-line-4",
+          "shape": "polyline",
+          "color": "faint",
+          "z": 0.1,
+          "points": [
+            [
+              -8.8,
+              0.06
+            ],
+            [
+              -3.7,
+              0.06
+            ]
+          ],
+          "stroke": 0.014
+        },
+        {
+          "id": "Right-ledger-line-4",
+          "shape": "polyline",
+          "color": "faint",
+          "z": 0.1,
+          "points": [
+            [
+              3.65,
+              0.06
+            ],
+            [
+              8.8,
+              0.06
+            ]
+          ],
+          "stroke": 0.014
+        },
+        {
+          "id": "Left-ledger-line-5",
+          "shape": "polyline",
+          "color": "faint",
+          "z": 0.1,
+          "points": [
+            [
+              -8.8,
+              0.185
+            ],
+            [
+              -3.7,
+              0.185
+            ]
+          ],
+          "stroke": 0.014
+        },
+        {
+          "id": "Right-ledger-line-5",
+          "shape": "polyline",
+          "color": "faint",
+          "z": 0.1,
+          "points": [
+            [
+              3.65,
+              0.185
+            ],
+            [
+              8.8,
+              0.185
+            ]
+          ],
+          "stroke": 0.014
+        },
+        {
+          "id": "Left-ledger-line-6",
+          "shape": "polyline",
+          "color": "faint",
+          "z": 0.1,
+          "points": [
+            [
+              -8.8,
+              0.31
+            ],
+            [
+              -3.7,
+              0.31
+            ]
+          ],
+          "stroke": 0.014
+        },
+        {
+          "id": "Right-ledger-line-6",
+          "shape": "polyline",
+          "color": "faint",
+          "z": 0.1,
+          "points": [
+            [
+              3.65,
+              0.31
+            ],
+            [
+              8.8,
+              0.31
+            ]
+          ],
+          "stroke": 0.014
+        },
+        {
+          "id": "Left-ledger-line-7",
+          "shape": "polyline",
+          "color": "faint",
+          "z": 0.1,
+          "points": [
+            [
+              -8.8,
+              0.435
+            ],
+            [
+              -3.7,
+              0.435
+            ]
+          ],
+          "stroke": 0.014
+        },
+        {
+          "id": "Right-ledger-line-7",
+          "shape": "polyline",
+          "color": "faint",
+          "z": 0.1,
+          "points": [
+            [
+              3.65,
+              0.435
+            ],
+            [
+              8.8,
+              0.435
+            ]
+          ],
+          "stroke": 0.014
+        },
+        {
+          "id": "Left-ledger-line-8",
+          "shape": "polyline",
+          "color": "faint",
+          "z": 0.1,
+          "points": [
+            [
+              -8.8,
+              0.56
+            ],
+            [
+              -3.7,
+              0.56
+            ]
+          ],
+          "stroke": 0.014
+        },
+        {
+          "id": "Right-ledger-line-8",
+          "shape": "polyline",
+          "color": "faint",
+          "z": 0.1,
+          "points": [
+            [
+              3.65,
+              0.56
+            ],
+            [
+              8.8,
+              0.56
+            ]
+          ],
+          "stroke": 0.014
+        },
+        {
+          "id": "Shared-axis",
+          "shape": "group",
+          "position": [
+            0,
+            0
+          ],
+          "z": 0.25
+        },
+        {
+          "id": "Connecting-shaft",
+          "shape": "polyline",
+          "color": "ink",
+          "z": 0.012,
+          "points": [
+            [
+              -7.9,
+              0.3
+            ],
+            [
+              7.9,
+              0.3
+            ]
+          ],
+          "stroke": 0.021,
+          "parent": "Shared-axis"
+        },
+        {
+          "id": "Left-bearing",
+          "shape": "ring",
+          "color": "ink",
+          "z": 0.019,
+          "radius": 0.092,
+          "stroke": 0.02,
+          "parent": "Shared-axis",
+          "position": [
+            -6.67,
+            0.3
+          ]
+        },
+        {
+          "id": "Left-axle",
+          "shape": "disk",
+          "color": "ink",
+          "z": 0.022,
+          "radius": 0.025,
+          "parent": "Shared-axis",
+          "position": [
+            -6.67,
+            0.3
+          ]
+        },
+        {
+          "id": "Right-bearing",
+          "shape": "ring",
+          "color": "ink",
+          "z": 0.019,
+          "radius": 0.092,
+          "stroke": 0.02,
+          "parent": "Shared-axis",
+          "position": [
+            6.67,
+            0.3
+          ]
+        },
+        {
+          "id": "Right-axle",
+          "shape": "disk",
+          "color": "ink",
+          "z": 0.022,
+          "radius": 0.025,
+          "parent": "Shared-axis",
+          "position": [
+            6.67,
+            0.3
+          ]
+        },
+        {
+          "id": "Left-Dial",
+          "shape": "group",
+          "position": [
+            0,
+            0
+          ],
+          "keys": [
+            {
+              "t": 0.0,
+              "position": [
+                -1.87,
+                0.3
+              ]
+            },
+            {
+              "t": 2.76,
+              "position": [
+                -1.95,
+                0.3
+              ]
+            },
+            {
+              "t": 6.6,
+              "position": [
+                -2.5,
+                0.35
+              ]
+            },
+            {
+              "t": 12.0,
+              "position": [
+                -2.8,
+                0.4
+              ]
+            }
+          ],
+          "z": 0.9
+        },
+        {
+          "id": "Left-Registration-offset",
+          "shape": "disk",
+          "color": "faint",
+          "z": 0.01,
+          "radius": 1.927,
+          "parent": "Left-Dial",
+          "position": [
+            0.083,
+            -0.084
+          ]
+        },
+        {
+          "id": "Left-Outer-rim",
+          "shape": "disk",
+          "color": "ink",
+          "z": 0.023,
+          "radius": 1.903,
+          "parent": "Left-Dial",
+          "position": [
+            0,
+            0
+          ]
+        },
+        {
+          "id": "Left-Face",
+          "shape": "disk",
+          "color": "cool",
+          "z": 0.032,
+          "radius": 1.836,
+          "parent": "Left-Dial",
+          "position": [
+            0,
+            0
+          ]
+        },
+        {
+          "id": "Left-Minute-track",
+          "shape": "ring",
+          "color": "sky",
+          "z": 0.039,
+          "radius": 1.632,
+          "stroke": 0.018,
+          "parent": "Left-Dial",
+          "position": [
+            0,
+            0
+          ]
+        },
+        {
+          "id": "Left-Inner-border",
+          "shape": "ring",
+          "color": "blue",
+          "z": 0.04,
+          "radius": 1.238,
+          "stroke": 0.01,
+          "parent": "Left-Dial",
+          "position": [
+            0,
+            0
+          ]
+        },
+        {
+          "id": "Left-Machined-arc",
+          "shape": "arc",
+          "color": "cyan",
+          "z": 0.041,
+          "radius": 1.74,
+          "startAngle": -14,
+          "endAngle": 116,
+          "stroke": 0.029,
+          "parent": "Left-Dial",
+          "position": [
+            0,
+            0
+          ]
+        },
+        {
+          "id": "Left-Opposite-arc",
+          "shape": "arc",
+          "color": "cyan",
+          "z": 0.042,
+          "radius": 1.74,
+          "startAngle": 168,
+          "endAngle": 269,
+          "stroke": 0.017,
+          "parent": "Left-Dial",
+          "position": [
+            0,
+            0
+          ]
+        },
+        {
+          "id": "Left-Index-0",
+          "shape": "polyline",
+          "color": "sky",
+          "z": 0.048,
+          "points": [
+            [
+              0.0,
+              1.39
+            ],
+            [
+              0.0,
+              1.566
+            ]
+          ],
+          "stroke": 0.058,
+          "parent": "Left-Dial"
+        },
+        {
+          "id": "Left-Index-1",
+          "shape": "polyline",
+          "color": "cyan",
+          "z": 0.048,
+          "points": [
+            [
+              0.208,
+              1.581
+            ],
+            [
+              0.213,
+              1.621
+            ]
+          ],
+          "stroke": 0.02,
+          "parent": "Left-Dial"
+        },
+        {
+          "id": "Left-Index-2",
+          "shape": "polyline",
+          "color": "cyan",
+          "z": 0.048,
+          "points": [
+            [
+              0.413,
+              1.541
+            ],
+            [
+              0.423,
+              1.579
+            ]
+          ],
+          "stroke": 0.02,
+          "parent": "Left-Dial"
+        },
+        {
+          "id": "Left-Index-3",
+          "shape": "polyline",
+          "color": "cyan",
+          "z": 0.048,
+          "points": [
+            [
+              0.61,
+              1.474
+            ],
+            [
+              0.626,
+              1.511
+            ]
+          ],
+          "stroke": 0.02,
+          "parent": "Left-Dial"
+        },
+        {
+          "id": "Left-Index-4",
+          "shape": "polyline",
+          "color": "sky",
+          "z": 0.048,
+          "points": [
+            [
+              0.695,
+              1.204
+            ],
+            [
+              0.783,
+              1.356
+            ]
+          ],
+          "stroke": 0.058,
+          "parent": "Left-Dial"
+        },
+        {
+          "id": "Left-Index-5",
+          "shape": "polyline",
+          "color": "cyan",
+          "z": 0.048,
+          "points": [
+            [
+              0.971,
+              1.265
+            ],
+            [
+              0.995,
+              1.297
+            ]
+          ],
+          "stroke": 0.02,
+          "parent": "Left-Dial"
+        },
+        {
+          "id": "Left-Index-6",
+          "shape": "polyline",
+          "color": "cyan",
+          "z": 0.048,
+          "points": [
+            [
+              1.128,
+              1.128
+            ],
+            [
+              1.156,
+              1.156
+            ]
+          ],
+          "stroke": 0.02,
+          "parent": "Left-Dial"
+        },
+        {
+          "id": "Left-Index-7",
+          "shape": "polyline",
+          "color": "cyan",
+          "z": 0.048,
+          "points": [
+            [
+              1.265,
+              0.971
+            ],
+            [
+              1.297,
+              0.995
+            ]
+          ],
+          "stroke": 0.02,
+          "parent": "Left-Dial"
+        },
+        {
+          "id": "Left-Index-8",
+          "shape": "polyline",
+          "color": "sky",
+          "z": 0.048,
+          "points": [
+            [
+              1.204,
+              0.695
+            ],
+            [
+              1.356,
+              0.783
+            ]
+          ],
+          "stroke": 0.058,
+          "parent": "Left-Dial"
+        },
+        {
+          "id": "Left-Index-9",
+          "shape": "polyline",
+          "color": "cyan",
+          "z": 0.048,
+          "points": [
+            [
+              1.474,
+              0.61
+            ],
+            [
+              1.511,
+              0.626
+            ]
+          ],
+          "stroke": 0.02,
+          "parent": "Left-Dial"
+        },
+        {
+          "id": "Left-Index-10",
+          "shape": "polyline",
+          "color": "cyan",
+          "z": 0.048,
+          "points": [
+            [
+              1.541,
+              0.413
+            ],
+            [
+              1.579,
+              0.423
+            ]
+          ],
+          "stroke": 0.02,
+          "parent": "Left-Dial"
+        },
+        {
+          "id": "Left-Index-11",
+          "shape": "polyline",
+          "color": "cyan",
+          "z": 0.048,
+          "points": [
+            [
+              1.581,
+              0.208
+            ],
+            [
+              1.621,
+              0.213
+            ]
+          ],
+          "stroke": 0.02,
+          "parent": "Left-Dial"
+        },
+        {
+          "id": "Left-Index-12",
+          "shape": "polyline",
+          "color": "sky",
+          "z": 0.048,
+          "points": [
+            [
+              1.39,
+              0.0
+            ],
+            [
+              1.566,
+              0.0
+            ]
+          ],
+          "stroke": 0.058,
+          "parent": "Left-Dial"
+        },
+        {
+          "id": "Left-Index-13",
+          "shape": "polyline",
+          "color": "cyan",
+          "z": 0.048,
+          "points": [
+            [
+              1.581,
+              -0.208
+            ],
+            [
+              1.621,
+              -0.213
+            ]
+          ],
+          "stroke": 0.02,
+          "parent": "Left-Dial"
+        },
+        {
+          "id": "Left-Index-14",
+          "shape": "polyline",
+          "color": "cyan",
+          "z": 0.048,
+          "points": [
+            [
+              1.541,
+              -0.413
+            ],
+            [
+              1.579,
+              -0.423
+            ]
+          ],
+          "stroke": 0.02,
+          "parent": "Left-Dial"
+        },
+        {
+          "id": "Left-Index-15",
+          "shape": "polyline",
+          "color": "cyan",
+          "z": 0.048,
+          "points": [
+            [
+              1.474,
+              -0.61
+            ],
+            [
+              1.511,
+              -0.626
+            ]
+          ],
+          "stroke": 0.02,
+          "parent": "Left-Dial"
+        },
+        {
+          "id": "Left-Index-16",
+          "shape": "polyline",
+          "color": "sky",
+          "z": 0.048,
+          "points": [
+            [
+              1.204,
+              -0.695
+            ],
+            [
+              1.356,
+              -0.783
+            ]
+          ],
+          "stroke": 0.058,
+          "parent": "Left-Dial"
+        },
+        {
+          "id": "Left-Index-17",
+          "shape": "polyline",
+          "color": "cyan",
+          "z": 0.048,
+          "points": [
+            [
+              1.265,
+              -0.971
+            ],
+            [
+              1.297,
+              -0.995
+            ]
+          ],
+          "stroke": 0.02,
+          "parent": "Left-Dial"
+        },
+        {
+          "id": "Left-Index-18",
+          "shape": "polyline",
+          "color": "cyan",
+          "z": 0.048,
+          "points": [
+            [
+              1.128,
+              -1.128
+            ],
+            [
+              1.156,
+              -1.156
+            ]
+          ],
+          "stroke": 0.02,
+          "parent": "Left-Dial"
+        },
+        {
+          "id": "Left-Index-19",
+          "shape": "polyline",
+          "color": "cyan",
+          "z": 0.048,
+          "points": [
+            [
+              0.971,
+              -1.265
+            ],
+            [
+              0.995,
+              -1.297
+            ]
+          ],
+          "stroke": 0.02,
+          "parent": "Left-Dial"
+        },
+        {
+          "id": "Left-Index-20",
+          "shape": "polyline",
+          "color": "sky",
+          "z": 0.048,
+          "points": [
+            [
+              0.695,
+              -1.204
+            ],
+            [
+              0.783,
+              -1.356
+            ]
+          ],
+          "stroke": 0.058,
+          "parent": "Left-Dial"
+        },
+        {
+          "id": "Left-Index-21",
+          "shape": "polyline",
+          "color": "cyan",
+          "z": 0.048,
+          "points": [
+            [
+              0.61,
+              -1.474
+            ],
+            [
+              0.626,
+              -1.511
+            ]
+          ],
+          "stroke": 0.02,
+          "parent": "Left-Dial"
+        },
+        {
+          "id": "Left-Index-22",
+          "shape": "polyline",
+          "color": "cyan",
+          "z": 0.048,
+          "points": [
+            [
+              0.413,
+              -1.541
+            ],
+            [
+              0.423,
+              -1.579
+            ]
+          ],
+          "stroke": 0.02,
+          "parent": "Left-Dial"
+        },
+        {
+          "id": "Left-Index-23",
+          "shape": "polyline",
+          "color": "cyan",
+          "z": 0.048,
+          "points": [
+            [
+              0.208,
+              -1.581
+            ],
+            [
+              0.213,
+              -1.621
+            ]
+          ],
+          "stroke": 0.02,
+          "parent": "Left-Dial"
+        },
+        {
+          "id": "Left-Index-24",
+          "shape": "polyline",
+          "color": "sky",
+          "z": 0.048,
+          "points": [
+            [
+              0.0,
+              -1.39
+            ],
+            [
+              0.0,
+              -1.566
+            ]
+          ],
+          "stroke": 0.058,
+          "parent": "Left-Dial"
+        },
+        {
+          "id": "Left-Index-25",
+          "shape": "polyline",
+          "color": "cyan",
+          "z": 0.048,
+          "points": [
+            [
+              -0.208,
+              -1.581
+            ],
+            [
+              -0.213,
+              -1.621
+            ]
+          ],
+          "stroke": 0.02,
+          "parent": "Left-Dial"
+        },
+        {
+          "id": "Left-Index-26",
+          "shape": "polyline",
+          "color": "cyan",
+          "z": 0.048,
+          "points": [
+            [
+              -0.413,
+              -1.541
+            ],
+            [
+              -0.423,
+              -1.579
+            ]
+          ],
+          "stroke": 0.02,
+          "parent": "Left-Dial"
+        },
+        {
+          "id": "Left-Index-27",
+          "shape": "polyline",
+          "color": "cyan",
+          "z": 0.048,
+          "points": [
+            [
+              -0.61,
+              -1.474
+            ],
+            [
+              -0.626,
+              -1.511
+            ]
+          ],
+          "stroke": 0.02,
+          "parent": "Left-Dial"
+        },
+        {
+          "id": "Left-Index-28",
+          "shape": "polyline",
+          "color": "sky",
+          "z": 0.048,
+          "points": [
+            [
+              -0.695,
+              -1.204
+            ],
+            [
+              -0.783,
+              -1.356
+            ]
+          ],
+          "stroke": 0.058,
+          "parent": "Left-Dial"
+        },
+        {
+          "id": "Left-Index-29",
+          "shape": "polyline",
+          "color": "cyan",
+          "z": 0.048,
+          "points": [
+            [
+              -0.971,
+              -1.265
+            ],
+            [
+              -0.995,
+              -1.297
+            ]
+          ],
+          "stroke": 0.02,
+          "parent": "Left-Dial"
+        },
+        {
+          "id": "Left-Index-30",
+          "shape": "polyline",
+          "color": "cyan",
+          "z": 0.048,
+          "points": [
+            [
+              -1.128,
+              -1.128
+            ],
+            [
+              -1.156,
+              -1.156
+            ]
+          ],
+          "stroke": 0.02,
+          "parent": "Left-Dial"
+        },
+        {
+          "id": "Left-Index-31",
+          "shape": "polyline",
+          "color": "cyan",
+          "z": 0.048,
+          "points": [
+            [
+              -1.265,
+              -0.971
+            ],
+            [
+              -1.297,
+              -0.995
+            ]
+          ],
+          "stroke": 0.02,
+          "parent": "Left-Dial"
+        },
+        {
+          "id": "Left-Index-32",
+          "shape": "polyline",
+          "color": "sky",
+          "z": 0.048,
+          "points": [
+            [
+              -1.204,
+              -0.695
+            ],
+            [
+              -1.356,
+              -0.783
+            ]
+          ],
+          "stroke": 0.058,
+          "parent": "Left-Dial"
+        },
+        {
+          "id": "Left-Index-33",
+          "shape": "polyline",
+          "color": "cyan",
+          "z": 0.048,
+          "points": [
+            [
+              -1.474,
+              -0.61
+            ],
+            [
+              -1.511,
+              -0.626
+            ]
+          ],
+          "stroke": 0.02,
+          "parent": "Left-Dial"
+        },
+        {
+          "id": "Left-Index-34",
+          "shape": "polyline",
+          "color": "cyan",
+          "z": 0.048,
+          "points": [
+            [
+              -1.541,
+              -0.413
+            ],
+            [
+              -1.579,
+              -0.423
+            ]
+          ],
+          "stroke": 0.02,
+          "parent": "Left-Dial"
+        },
+        {
+          "id": "Left-Index-35",
+          "shape": "polyline",
+          "color": "cyan",
+          "z": 0.048,
+          "points": [
+            [
+              -1.581,
+              -0.208
+            ],
+            [
+              -1.621,
+              -0.213
+            ]
+          ],
+          "stroke": 0.02,
+          "parent": "Left-Dial"
+        },
+        {
+          "id": "Left-Index-36",
+          "shape": "polyline",
+          "color": "sky",
+          "z": 0.048,
+          "points": [
+            [
+              -1.39,
+              -0.0
+            ],
+            [
+              -1.566,
+              -0.0
+            ]
+          ],
+          "stroke": 0.058,
+          "parent": "Left-Dial"
+        },
+        {
+          "id": "Left-Index-37",
+          "shape": "polyline",
+          "color": "cyan",
+          "z": 0.048,
+          "points": [
+            [
+              -1.581,
+              0.208
+            ],
+            [
+              -1.621,
+              0.213
+            ]
+          ],
+          "stroke": 0.02,
+          "parent": "Left-Dial"
+        },
+        {
+          "id": "Left-Index-38",
+          "shape": "polyline",
+          "color": "cyan",
+          "z": 0.048,
+          "points": [
+            [
+              -1.541,
+              0.413
+            ],
+            [
+              -1.579,
+              0.423
+            ]
+          ],
+          "stroke": 0.02,
+          "parent": "Left-Dial"
+        },
+        {
+          "id": "Left-Index-39",
+          "shape": "polyline",
+          "color": "cyan",
+          "z": 0.048,
+          "points": [
+            [
+              -1.474,
+              0.61
+            ],
+            [
+              -1.511,
+              0.626
+            ]
+          ],
+          "stroke": 0.02,
+          "parent": "Left-Dial"
+        },
+        {
+          "id": "Left-Index-40",
+          "shape": "polyline",
+          "color": "sky",
+          "z": 0.048,
+          "points": [
+            [
+              -1.204,
+              0.695
+            ],
+            [
+              -1.356,
+              0.783
+            ]
+          ],
+          "stroke": 0.058,
+          "parent": "Left-Dial"
+        },
+        {
+          "id": "Left-Index-41",
+          "shape": "polyline",
+          "color": "cyan",
+          "z": 0.048,
+          "points": [
+            [
+              -1.265,
+              0.971
+            ],
+            [
+              -1.297,
+              0.995
+            ]
+          ],
+          "stroke": 0.02,
+          "parent": "Left-Dial"
+        },
+        {
+          "id": "Left-Index-42",
+          "shape": "polyline",
+          "color": "cyan",
+          "z": 0.048,
+          "points": [
+            [
+              -1.128,
+              1.128
+            ],
+            [
+              -1.156,
+              1.156
+            ]
+          ],
+          "stroke": 0.02,
+          "parent": "Left-Dial"
+        },
+        {
+          "id": "Left-Index-43",
+          "shape": "polyline",
+          "color": "cyan",
+          "z": 0.048,
+          "points": [
+            [
+              -0.971,
+              1.265
+            ],
+            [
+              -0.995,
+              1.297
+            ]
+          ],
+          "stroke": 0.02,
+          "parent": "Left-Dial"
+        },
+        {
+          "id": "Left-Index-44",
+          "shape": "polyline",
+          "color": "sky",
+          "z": 0.048,
+          "points": [
+            [
+              -0.695,
+              1.204
+            ],
+            [
+              -0.783,
+              1.356
+            ]
+          ],
+          "stroke": 0.058,
+          "parent": "Left-Dial"
+        },
+        {
+          "id": "Left-Index-45",
+          "shape": "polyline",
+          "color": "cyan",
+          "z": 0.048,
+          "points": [
+            [
+              -0.61,
+              1.474
+            ],
+            [
+              -0.626,
+              1.511
+            ]
+          ],
+          "stroke": 0.02,
+          "parent": "Left-Dial"
+        },
+        {
+          "id": "Left-Index-46",
+          "shape": "polyline",
+          "color": "cyan",
+          "z": 0.048,
+          "points": [
+            [
+              -0.413,
+              1.541
+            ],
+            [
+              -0.423,
+              1.579
+            ]
+          ],
+          "stroke": 0.02,
+          "parent": "Left-Dial"
+        },
+        {
+          "id": "Left-Index-47",
+          "shape": "polyline",
+          "color": "cyan",
+          "z": 0.048,
+          "points": [
+            [
+              -0.208,
+              1.581
+            ],
+            [
+              -0.213,
+              1.621
+            ]
+          ],
+          "stroke": 0.02,
+          "parent": "Left-Dial"
+        },
+        {
+          "id": "Left-Registration-bed",
+          "shape": "disk",
+          "color": "blue",
+          "z": 0.053,
+          "radius": 0.887,
+          "parent": "Left-Dial",
+          "position": [
+            0,
+            0
+          ]
+        },
+        {
+          "id": "Left-Recessed-center",
+          "shape": "disk",
+          "color": "cool",
+          "z": 0.055,
+          "radius": 0.833,
+          "parent": "Left-Dial",
+          "position": [
+            0,
+            0
+          ]
+        },
+        {
+          "id": "Left-Pin-register",
+          "shape": "ring",
+          "color": "blue",
+          "z": 0.061,
+          "radius": 0.569,
+          "stroke": 0.013,
+          "parent": "Left-Dial",
+          "position": [
+            0,
+            0
+          ]
+        },
+        {
+          "id": "Left-Inner-dot-0",
+          "shape": "disk",
+          "color": "cyan",
+          "z": 0.065,
+          "radius": 0.016,
+          "parent": "Left-Dial",
+          "position": [
+            0.0,
+            0.574
+          ]
+        },
+        {
+          "id": "Left-Inner-dot-1",
+          "shape": "disk",
+          "color": "cyan",
+          "z": 0.065,
+          "radius": 0.016,
+          "parent": "Left-Dial",
+          "position": [
+            0.2869999999999999,
+            0.4970985817722678
+          ]
+        },
+        {
+          "id": "Left-Inner-dot-2",
+          "shape": "disk",
+          "color": "cyan",
+          "z": 0.065,
+          "radius": 0.016,
+          "parent": "Left-Dial",
+          "position": [
+            0.49709858177226773,
+            0.28700000000000003
+          ]
+        },
+        {
+          "id": "Left-Inner-dot-3",
+          "shape": "disk",
+          "color": "cyan",
+          "z": 0.065,
+          "radius": 0.016,
+          "parent": "Left-Dial",
+          "position": [
+            0.574,
+            3.5147363135529033e-17
+          ]
+        },
+        {
+          "id": "Left-Inner-dot-4",
+          "shape": "disk",
+          "color": "cyan",
+          "z": 0.065,
+          "radius": 0.016,
+          "parent": "Left-Dial",
+          "position": [
+            0.4970985817722678,
+            -0.28699999999999987
+          ]
+        },
+        {
+          "id": "Left-Inner-dot-5",
+          "shape": "disk",
+          "color": "cyan",
+          "z": 0.065,
+          "radius": 0.016,
+          "parent": "Left-Dial",
+          "position": [
+            0.2869999999999999,
+            -0.4970985817722678
+          ]
+        },
+        {
+          "id": "Left-Inner-dot-6",
+          "shape": "disk",
+          "color": "cyan",
+          "z": 0.065,
+          "radius": 0.016,
+          "parent": "Left-Dial",
+          "position": [
+            7.029472627105807e-17,
+            -0.574
+          ]
+        },
+        {
+          "id": "Left-Inner-dot-7",
+          "shape": "disk",
+          "color": "cyan",
+          "z": 0.065,
+          "radius": 0.016,
+          "parent": "Left-Dial",
+          "position": [
+            -0.28699999999999987,
+            -0.49709858177226784
+          ]
+        },
+        {
+          "id": "Left-Inner-dot-8",
+          "shape": "disk",
+          "color": "cyan",
+          "z": 0.065,
+          "radius": 0.016,
+          "parent": "Left-Dial",
+          "position": [
+            -0.49709858177226757,
+            -0.28700000000000025
+          ]
+        },
+        {
+          "id": "Left-Inner-dot-9",
+          "shape": "disk",
+          "color": "cyan",
+          "z": 0.065,
+          "radius": 0.016,
+          "parent": "Left-Dial",
+          "position": [
+            -0.574,
+            -1.054420894065871e-16
+          ]
+        },
+        {
+          "id": "Left-Inner-dot-10",
+          "shape": "disk",
+          "color": "cyan",
+          "z": 0.065,
+          "radius": 0.016,
+          "parent": "Left-Dial",
+          "position": [
+            -0.49709858177226773,
+            0.28700000000000003
+          ]
+        },
+        {
+          "id": "Left-Inner-dot-11",
+          "shape": "disk",
+          "color": "cyan",
+          "z": 0.065,
+          "radius": 0.016,
+          "parent": "Left-Dial",
+          "position": [
+            -0.28700000000000025,
+            0.49709858177226757
+          ]
+        },
+        {
+          "id": "Left-Rotor",
+          "shape": "group",
+          "position": [
+            0,
+            0
+          ],
+          "keys": [
+            {
+              "t": 0.0,
+              "rotation": -23
+            },
+            {
+              "t": 2.76,
+              "rotation": -58
+            },
+            {
+              "t": 4.92,
+              "rotation": -80
+            },
+            {
+              "t": 6.84,
+              "rotation": -91
+            },
+            {
+              "t": 9.12,
+              "rotation": -72
+            },
+            {
+              "t": 12.0,
+              "rotation": -51
+            }
+          ],
+          "parent": "Left-Dial",
+          "z": 0.08
+        },
+        {
+          "id": "Left-Pointer",
+          "shape": "polygon",
+          "color": "sky",
+          "z": 0.011,
+          "points": [
+            [
+              -0.038,
+              -0.659
+            ],
+            [
+              0.038,
+              -0.659
+            ],
+            [
+              0.054,
+              0.97
+            ],
+            [
+              0.027,
+              1.19
+            ],
+            [
+              0,
+              1.49
+            ],
+            [
+              -0.048,
+              1.15
+            ]
+          ],
+          "parent": "Left-Rotor"
+        },
+        {
+          "id": "Left-Pointer-inlay",
+          "shape": "polygon",
+          "color": "cyan",
+          "z": 0.013,
+          "points": [
+            [
+              -0.012,
+              0.15
+            ],
+            [
+              0.021,
+              0.15
+            ],
+            [
+              0.015,
+              1.12
+            ],
+            [
+              -0.007,
+              1.13
+            ]
+          ],
+          "parent": "Left-Rotor"
+        },
+        {
+          "id": "Left-Counterweight",
+          "shape": "ring",
+          "color": "sky",
+          "z": 0.014,
+          "radius": 0.106,
+          "stroke": 0.057,
+          "parent": "Left-Rotor",
+          "position": [
+            0,
+            -0.51
+          ]
+        },
+        {
+          "id": "Left-Fastener",
+          "shape": "disk",
+          "color": "ink",
+          "z": 0.099,
+          "radius": 0.159,
+          "parent": "Left-Dial",
+          "position": [
+            0,
+            0
+          ]
+        },
+        {
+          "id": "Left-Jewel",
+          "shape": "disk",
+          "color": "cyan",
+          "z": 0.105,
+          "radius": 0.069,
+          "parent": "Left-Dial",
+          "position": [
+            -0.01,
+            0.013
+          ]
+        },
+        {
+          "id": "Left-Hand-tip",
+          "shape": "disk",
+          "color": "sky",
+          "z": 0.016,
+          "radius": 0.084,
+          "parent": "Left-Rotor",
+          "position": [
+            0,
+            1.765
+          ]
+        },
+        {
+          "id": "Left-Outside-orbit",
+          "shape": "arc",
+          "color": "ink",
+          "z": 0.012,
+          "radius": 2.012,
+          "startAngle": 201,
+          "endAngle": 337,
+          "stroke": 0.015,
+          "parent": "Left-Dial",
+          "position": [
+            0,
+            0
+          ]
+        },
+        {
+          "id": "Left-Outside-orbit-upper",
+          "shape": "arc",
+          "color": "ink",
+          "z": 0.013,
+          "radius": 2.01,
+          "startAngle": 25,
+          "endAngle": 107,
+          "stroke": 0.013,
+          "parent": "Left-Dial",
+          "position": [
+            0,
+            0
+          ]
+        },
+        {
+          "id": "Right-Dial",
+          "shape": "group",
+          "position": [
+            0,
+            0
+          ],
+          "keys": [
+            {
+              "t": 0.0,
+              "position": [
+                1.87,
+                0.3
+              ]
+            },
+            {
+              "t": 2.76,
+              "position": [
+                1.95,
+                0.3
+              ]
+            },
+            {
+              "t": 6.6,
+              "position": [
+                2.5,
+                0.35
+              ]
+            },
+            {
+              "t": 12.0,
+              "position": [
+                2.8,
+                0.4
+              ]
+            }
+          ],
+          "z": 1.2
+        },
+        {
+          "id": "Right-Registration-offset",
+          "shape": "disk",
+          "color": "faint",
+          "z": 0.01,
+          "radius": 1.927,
+          "parent": "Right-Dial",
+          "position": [
+            0.083,
+            -0.084
+          ]
+        },
+        {
+          "id": "Right-Outer-rim",
+          "shape": "disk",
+          "color": "oxide",
+          "z": 0.023,
+          "radius": 1.903,
+          "parent": "Right-Dial",
+          "position": [
+            0,
+            0
+          ]
+        },
+        {
+          "id": "Right-Face",
+          "shape": "disk",
+          "color": "orange",
+          "z": 0.032,
+          "radius": 1.836,
+          "parent": "Right-Dial",
+          "position": [
+            0,
+            0
+          ]
+        },
+        {
+          "id": "Right-Minute-track",
+          "shape": "ring",
+          "color": "cream",
+          "z": 0.039,
+          "radius": 1.632,
+          "stroke": 0.018,
+          "parent": "Right-Dial",
+          "position": [
+            0,
+            0
+          ]
+        },
+        {
+          "id": "Right-Inner-border",
+          "shape": "ring",
+          "color": "ember",
+          "z": 0.04,
+          "radius": 1.238,
+          "stroke": 0.01,
+          "parent": "Right-Dial",
+          "position": [
+            0,
+            0
+          ]
+        },
+        {
+          "id": "Right-Machined-arc",
+          "shape": "arc",
+          "color": "gold",
+          "z": 0.041,
+          "radius": 1.74,
+          "startAngle": -14,
+          "endAngle": 116,
+          "stroke": 0.029,
+          "parent": "Right-Dial",
+          "position": [
+            0,
+            0
+          ]
+        },
+        {
+          "id": "Right-Opposite-arc",
+          "shape": "arc",
+          "color": "gold",
+          "z": 0.042,
+          "radius": 1.74,
+          "startAngle": 168,
+          "endAngle": 269,
+          "stroke": 0.017,
+          "parent": "Right-Dial",
+          "position": [
+            0,
+            0
+          ]
+        },
+        {
+          "id": "Right-Index-0",
+          "shape": "polyline",
+          "color": "cream",
+          "z": 0.048,
+          "points": [
+            [
+              0.0,
+              1.39
+            ],
+            [
+              0.0,
+              1.566
+            ]
+          ],
+          "stroke": 0.058,
+          "parent": "Right-Dial"
+        },
+        {
+          "id": "Right-Index-1",
+          "shape": "polyline",
+          "color": "gold",
+          "z": 0.048,
+          "points": [
+            [
+              0.208,
+              1.581
+            ],
+            [
+              0.213,
+              1.621
+            ]
+          ],
+          "stroke": 0.02,
+          "parent": "Right-Dial"
+        },
+        {
+          "id": "Right-Index-2",
+          "shape": "polyline",
+          "color": "gold",
+          "z": 0.048,
+          "points": [
+            [
+              0.413,
+              1.541
+            ],
+            [
+              0.423,
+              1.579
+            ]
+          ],
+          "stroke": 0.02,
+          "parent": "Right-Dial"
+        },
+        {
+          "id": "Right-Index-3",
+          "shape": "polyline",
+          "color": "gold",
+          "z": 0.048,
+          "points": [
+            [
+              0.61,
+              1.474
+            ],
+            [
+              0.626,
+              1.511
+            ]
+          ],
+          "stroke": 0.02,
+          "parent": "Right-Dial"
+        },
+        {
+          "id": "Right-Index-4",
+          "shape": "polyline",
+          "color": "cream",
+          "z": 0.048,
+          "points": [
+            [
+              0.695,
+              1.204
+            ],
+            [
+              0.783,
+              1.356
+            ]
+          ],
+          "stroke": 0.058,
+          "parent": "Right-Dial"
+        },
+        {
+          "id": "Right-Index-5",
+          "shape": "polyline",
+          "color": "gold",
+          "z": 0.048,
+          "points": [
+            [
+              0.971,
+              1.265
+            ],
+            [
+              0.995,
+              1.297
+            ]
+          ],
+          "stroke": 0.02,
+          "parent": "Right-Dial"
+        },
+        {
+          "id": "Right-Index-6",
+          "shape": "polyline",
+          "color": "gold",
+          "z": 0.048,
+          "points": [
+            [
+              1.128,
+              1.128
+            ],
+            [
+              1.156,
+              1.156
+            ]
+          ],
+          "stroke": 0.02,
+          "parent": "Right-Dial"
+        },
+        {
+          "id": "Right-Index-7",
+          "shape": "polyline",
+          "color": "gold",
+          "z": 0.048,
+          "points": [
+            [
+              1.265,
+              0.971
+            ],
+            [
+              1.297,
+              0.995
+            ]
+          ],
+          "stroke": 0.02,
+          "parent": "Right-Dial"
+        },
+        {
+          "id": "Right-Index-8",
+          "shape": "polyline",
+          "color": "cream",
+          "z": 0.048,
+          "points": [
+            [
+              1.204,
+              0.695
+            ],
+            [
+              1.356,
+              0.783
+            ]
+          ],
+          "stroke": 0.058,
+          "parent": "Right-Dial"
+        },
+        {
+          "id": "Right-Index-9",
+          "shape": "polyline",
+          "color": "gold",
+          "z": 0.048,
+          "points": [
+            [
+              1.474,
+              0.61
+            ],
+            [
+              1.511,
+              0.626
+            ]
+          ],
+          "stroke": 0.02,
+          "parent": "Right-Dial"
+        },
+        {
+          "id": "Right-Index-10",
+          "shape": "polyline",
+          "color": "gold",
+          "z": 0.048,
+          "points": [
+            [
+              1.541,
+              0.413
+            ],
+            [
+              1.579,
+              0.423
+            ]
+          ],
+          "stroke": 0.02,
+          "parent": "Right-Dial"
+        },
+        {
+          "id": "Right-Index-11",
+          "shape": "polyline",
+          "color": "gold",
+          "z": 0.048,
+          "points": [
+            [
+              1.581,
+              0.208
+            ],
+            [
+              1.621,
+              0.213
+            ]
+          ],
+          "stroke": 0.02,
+          "parent": "Right-Dial"
+        },
+        {
+          "id": "Right-Index-12",
+          "shape": "polyline",
+          "color": "cream",
+          "z": 0.048,
+          "points": [
+            [
+              1.39,
+              0.0
+            ],
+            [
+              1.566,
+              0.0
+            ]
+          ],
+          "stroke": 0.058,
+          "parent": "Right-Dial"
+        },
+        {
+          "id": "Right-Index-13",
+          "shape": "polyline",
+          "color": "gold",
+          "z": 0.048,
+          "points": [
+            [
+              1.581,
+              -0.208
+            ],
+            [
+              1.621,
+              -0.213
+            ]
+          ],
+          "stroke": 0.02,
+          "parent": "Right-Dial"
+        },
+        {
+          "id": "Right-Index-14",
+          "shape": "polyline",
+          "color": "gold",
+          "z": 0.048,
+          "points": [
+            [
+              1.541,
+              -0.413
+            ],
+            [
+              1.579,
+              -0.423
+            ]
+          ],
+          "stroke": 0.02,
+          "parent": "Right-Dial"
+        },
+        {
+          "id": "Right-Index-15",
+          "shape": "polyline",
+          "color": "gold",
+          "z": 0.048,
+          "points": [
+            [
+              1.474,
+              -0.61
+            ],
+            [
+              1.511,
+              -0.626
+            ]
+          ],
+          "stroke": 0.02,
+          "parent": "Right-Dial"
+        },
+        {
+          "id": "Right-Index-16",
+          "shape": "polyline",
+          "color": "cream",
+          "z": 0.048,
+          "points": [
+            [
+              1.204,
+              -0.695
+            ],
+            [
+              1.356,
+              -0.783
+            ]
+          ],
+          "stroke": 0.058,
+          "parent": "Right-Dial"
+        },
+        {
+          "id": "Right-Index-17",
+          "shape": "polyline",
+          "color": "gold",
+          "z": 0.048,
+          "points": [
+            [
+              1.265,
+              -0.971
+            ],
+            [
+              1.297,
+              -0.995
+            ]
+          ],
+          "stroke": 0.02,
+          "parent": "Right-Dial"
+        },
+        {
+          "id": "Right-Index-18",
+          "shape": "polyline",
+          "color": "gold",
+          "z": 0.048,
+          "points": [
+            [
+              1.128,
+              -1.128
+            ],
+            [
+              1.156,
+              -1.156
+            ]
+          ],
+          "stroke": 0.02,
+          "parent": "Right-Dial"
+        },
+        {
+          "id": "Right-Index-19",
+          "shape": "polyline",
+          "color": "gold",
+          "z": 0.048,
+          "points": [
+            [
+              0.971,
+              -1.265
+            ],
+            [
+              0.995,
+              -1.297
+            ]
+          ],
+          "stroke": 0.02,
+          "parent": "Right-Dial"
+        },
+        {
+          "id": "Right-Index-20",
+          "shape": "polyline",
+          "color": "cream",
+          "z": 0.048,
+          "points": [
+            [
+              0.695,
+              -1.204
+            ],
+            [
+              0.783,
+              -1.356
+            ]
+          ],
+          "stroke": 0.058,
+          "parent": "Right-Dial"
+        },
+        {
+          "id": "Right-Index-21",
+          "shape": "polyline",
+          "color": "gold",
+          "z": 0.048,
+          "points": [
+            [
+              0.61,
+              -1.474
+            ],
+            [
+              0.626,
+              -1.511
+            ]
+          ],
+          "stroke": 0.02,
+          "parent": "Right-Dial"
+        },
+        {
+          "id": "Right-Index-22",
+          "shape": "polyline",
+          "color": "gold",
+          "z": 0.048,
+          "points": [
+            [
+              0.413,
+              -1.541
+            ],
+            [
+              0.423,
+              -1.579
+            ]
+          ],
+          "stroke": 0.02,
+          "parent": "Right-Dial"
+        },
+        {
+          "id": "Right-Index-23",
+          "shape": "polyline",
+          "color": "gold",
+          "z": 0.048,
+          "points": [
+            [
+              0.208,
+              -1.581
+            ],
+            [
+              0.213,
+              -1.621
+            ]
+          ],
+          "stroke": 0.02,
+          "parent": "Right-Dial"
+        },
+        {
+          "id": "Right-Index-24",
+          "shape": "polyline",
+          "color": "cream",
+          "z": 0.048,
+          "points": [
+            [
+              0.0,
+              -1.39
+            ],
+            [
+              0.0,
+              -1.566
+            ]
+          ],
+          "stroke": 0.058,
+          "parent": "Right-Dial"
+        },
+        {
+          "id": "Right-Index-25",
+          "shape": "polyline",
+          "color": "gold",
+          "z": 0.048,
+          "points": [
+            [
+              -0.208,
+              -1.581
+            ],
+            [
+              -0.213,
+              -1.621
+            ]
+          ],
+          "stroke": 0.02,
+          "parent": "Right-Dial"
+        },
+        {
+          "id": "Right-Index-26",
+          "shape": "polyline",
+          "color": "gold",
+          "z": 0.048,
+          "points": [
+            [
+              -0.413,
+              -1.541
+            ],
+            [
+              -0.423,
+              -1.579
+            ]
+          ],
+          "stroke": 0.02,
+          "parent": "Right-Dial"
+        },
+        {
+          "id": "Right-Index-27",
+          "shape": "polyline",
+          "color": "gold",
+          "z": 0.048,
+          "points": [
+            [
+              -0.61,
+              -1.474
+            ],
+            [
+              -0.626,
+              -1.511
+            ]
+          ],
+          "stroke": 0.02,
+          "parent": "Right-Dial"
+        },
+        {
+          "id": "Right-Index-28",
+          "shape": "polyline",
+          "color": "cream",
+          "z": 0.048,
+          "points": [
+            [
+              -0.695,
+              -1.204
+            ],
+            [
+              -0.783,
+              -1.356
+            ]
+          ],
+          "stroke": 0.058,
+          "parent": "Right-Dial"
+        },
+        {
+          "id": "Right-Index-29",
+          "shape": "polyline",
+          "color": "gold",
+          "z": 0.048,
+          "points": [
+            [
+              -0.971,
+              -1.265
+            ],
+            [
+              -0.995,
+              -1.297
+            ]
+          ],
+          "stroke": 0.02,
+          "parent": "Right-Dial"
+        },
+        {
+          "id": "Right-Index-30",
+          "shape": "polyline",
+          "color": "gold",
+          "z": 0.048,
+          "points": [
+            [
+              -1.128,
+              -1.128
+            ],
+            [
+              -1.156,
+              -1.156
+            ]
+          ],
+          "stroke": 0.02,
+          "parent": "Right-Dial"
+        },
+        {
+          "id": "Right-Index-31",
+          "shape": "polyline",
+          "color": "gold",
+          "z": 0.048,
+          "points": [
+            [
+              -1.265,
+              -0.971
+            ],
+            [
+              -1.297,
+              -0.995
+            ]
+          ],
+          "stroke": 0.02,
+          "parent": "Right-Dial"
+        },
+        {
+          "id": "Right-Index-32",
+          "shape": "polyline",
+          "color": "cream",
+          "z": 0.048,
+          "points": [
+            [
+              -1.204,
+              -0.695
+            ],
+            [
+              -1.356,
+              -0.783
+            ]
+          ],
+          "stroke": 0.058,
+          "parent": "Right-Dial"
+        },
+        {
+          "id": "Right-Index-33",
+          "shape": "polyline",
+          "color": "gold",
+          "z": 0.048,
+          "points": [
+            [
+              -1.474,
+              -0.61
+            ],
+            [
+              -1.511,
+              -0.626
+            ]
+          ],
+          "stroke": 0.02,
+          "parent": "Right-Dial"
+        },
+        {
+          "id": "Right-Index-34",
+          "shape": "polyline",
+          "color": "gold",
+          "z": 0.048,
+          "points": [
+            [
+              -1.541,
+              -0.413
+            ],
+            [
+              -1.579,
+              -0.423
+            ]
+          ],
+          "stroke": 0.02,
+          "parent": "Right-Dial"
+        },
+        {
+          "id": "Right-Index-35",
+          "shape": "polyline",
+          "color": "gold",
+          "z": 0.048,
+          "points": [
+            [
+              -1.581,
+              -0.208
+            ],
+            [
+              -1.621,
+              -0.213
+            ]
+          ],
+          "stroke": 0.02,
+          "parent": "Right-Dial"
+        },
+        {
+          "id": "Right-Index-36",
+          "shape": "polyline",
+          "color": "cream",
+          "z": 0.048,
+          "points": [
+            [
+              -1.39,
+              -0.0
+            ],
+            [
+              -1.566,
+              -0.0
+            ]
+          ],
+          "stroke": 0.058,
+          "parent": "Right-Dial"
+        },
+        {
+          "id": "Right-Index-37",
+          "shape": "polyline",
+          "color": "gold",
+          "z": 0.048,
+          "points": [
+            [
+              -1.581,
+              0.208
+            ],
+            [
+              -1.621,
+              0.213
+            ]
+          ],
+          "stroke": 0.02,
+          "parent": "Right-Dial"
+        },
+        {
+          "id": "Right-Index-38",
+          "shape": "polyline",
+          "color": "gold",
+          "z": 0.048,
+          "points": [
+            [
+              -1.541,
+              0.413
+            ],
+            [
+              -1.579,
+              0.423
+            ]
+          ],
+          "stroke": 0.02,
+          "parent": "Right-Dial"
+        },
+        {
+          "id": "Right-Index-39",
+          "shape": "polyline",
+          "color": "gold",
+          "z": 0.048,
+          "points": [
+            [
+              -1.474,
+              0.61
+            ],
+            [
+              -1.511,
+              0.626
+            ]
+          ],
+          "stroke": 0.02,
+          "parent": "Right-Dial"
+        },
+        {
+          "id": "Right-Index-40",
+          "shape": "polyline",
+          "color": "cream",
+          "z": 0.048,
+          "points": [
+            [
+              -1.204,
+              0.695
+            ],
+            [
+              -1.356,
+              0.783
+            ]
+          ],
+          "stroke": 0.058,
+          "parent": "Right-Dial"
+        },
+        {
+          "id": "Right-Index-41",
+          "shape": "polyline",
+          "color": "gold",
+          "z": 0.048,
+          "points": [
+            [
+              -1.265,
+              0.971
+            ],
+            [
+              -1.297,
+              0.995
+            ]
+          ],
+          "stroke": 0.02,
+          "parent": "Right-Dial"
+        },
+        {
+          "id": "Right-Index-42",
+          "shape": "polyline",
+          "color": "gold",
+          "z": 0.048,
+          "points": [
+            [
+              -1.128,
+              1.128
+            ],
+            [
+              -1.156,
+              1.156
+            ]
+          ],
+          "stroke": 0.02,
+          "parent": "Right-Dial"
+        },
+        {
+          "id": "Right-Index-43",
+          "shape": "polyline",
+          "color": "gold",
+          "z": 0.048,
+          "points": [
+            [
+              -0.971,
+              1.265
+            ],
+            [
+              -0.995,
+              1.297
+            ]
+          ],
+          "stroke": 0.02,
+          "parent": "Right-Dial"
+        },
+        {
+          "id": "Right-Index-44",
+          "shape": "polyline",
+          "color": "cream",
+          "z": 0.048,
+          "points": [
+            [
+              -0.695,
+              1.204
+            ],
+            [
+              -0.783,
+              1.356
+            ]
+          ],
+          "stroke": 0.058,
+          "parent": "Right-Dial"
+        },
+        {
+          "id": "Right-Index-45",
+          "shape": "polyline",
+          "color": "gold",
+          "z": 0.048,
+          "points": [
+            [
+              -0.61,
+              1.474
+            ],
+            [
+              -0.626,
+              1.511
+            ]
+          ],
+          "stroke": 0.02,
+          "parent": "Right-Dial"
+        },
+        {
+          "id": "Right-Index-46",
+          "shape": "polyline",
+          "color": "gold",
+          "z": 0.048,
+          "points": [
+            [
+              -0.413,
+              1.541
+            ],
+            [
+              -0.423,
+              1.579
+            ]
+          ],
+          "stroke": 0.02,
+          "parent": "Right-Dial"
+        },
+        {
+          "id": "Right-Index-47",
+          "shape": "polyline",
+          "color": "gold",
+          "z": 0.048,
+          "points": [
+            [
+              -0.208,
+              1.581
+            ],
+            [
+              -0.213,
+              1.621
+            ]
+          ],
+          "stroke": 0.02,
+          "parent": "Right-Dial"
+        },
+        {
+          "id": "Right-Registration-bed",
+          "shape": "disk",
+          "color": "ember",
+          "z": 0.053,
+          "radius": 0.887,
+          "parent": "Right-Dial",
+          "position": [
+            0,
+            0
+          ]
+        },
+        {
+          "id": "Right-Recessed-center",
+          "shape": "disk",
+          "color": "orange",
+          "z": 0.055,
+          "radius": 0.833,
+          "parent": "Right-Dial",
+          "position": [
+            0,
+            0
+          ]
+        },
+        {
+          "id": "Right-Pin-register",
+          "shape": "ring",
+          "color": "ember",
+          "z": 0.061,
+          "radius": 0.569,
+          "stroke": 0.013,
+          "parent": "Right-Dial",
+          "position": [
+            0,
+            0
+          ]
+        },
+        {
+          "id": "Right-Inner-dot-0",
+          "shape": "disk",
+          "color": "gold",
+          "z": 0.065,
+          "radius": 0.016,
+          "parent": "Right-Dial",
+          "position": [
+            0.0,
+            0.574
+          ]
+        },
+        {
+          "id": "Right-Inner-dot-1",
+          "shape": "disk",
+          "color": "gold",
+          "z": 0.065,
+          "radius": 0.016,
+          "parent": "Right-Dial",
+          "position": [
+            0.2869999999999999,
+            0.4970985817722678
+          ]
+        },
+        {
+          "id": "Right-Inner-dot-2",
+          "shape": "disk",
+          "color": "gold",
+          "z": 0.065,
+          "radius": 0.016,
+          "parent": "Right-Dial",
+          "position": [
+            0.49709858177226773,
+            0.28700000000000003
+          ]
+        },
+        {
+          "id": "Right-Inner-dot-3",
+          "shape": "disk",
+          "color": "gold",
+          "z": 0.065,
+          "radius": 0.016,
+          "parent": "Right-Dial",
+          "position": [
+            0.574,
+            3.5147363135529033e-17
+          ]
+        },
+        {
+          "id": "Right-Inner-dot-4",
+          "shape": "disk",
+          "color": "gold",
+          "z": 0.065,
+          "radius": 0.016,
+          "parent": "Right-Dial",
+          "position": [
+            0.4970985817722678,
+            -0.28699999999999987
+          ]
+        },
+        {
+          "id": "Right-Inner-dot-5",
+          "shape": "disk",
+          "color": "gold",
+          "z": 0.065,
+          "radius": 0.016,
+          "parent": "Right-Dial",
+          "position": [
+            0.2869999999999999,
+            -0.4970985817722678
+          ]
+        },
+        {
+          "id": "Right-Inner-dot-6",
+          "shape": "disk",
+          "color": "gold",
+          "z": 0.065,
+          "radius": 0.016,
+          "parent": "Right-Dial",
+          "position": [
+            7.029472627105807e-17,
+            -0.574
+          ]
+        },
+        {
+          "id": "Right-Inner-dot-7",
+          "shape": "disk",
+          "color": "gold",
+          "z": 0.065,
+          "radius": 0.016,
+          "parent": "Right-Dial",
+          "position": [
+            -0.28699999999999987,
+            -0.49709858177226784
+          ]
+        },
+        {
+          "id": "Right-Inner-dot-8",
+          "shape": "disk",
+          "color": "gold",
+          "z": 0.065,
+          "radius": 0.016,
+          "parent": "Right-Dial",
+          "position": [
+            -0.49709858177226757,
+            -0.28700000000000025
+          ]
+        },
+        {
+          "id": "Right-Inner-dot-9",
+          "shape": "disk",
+          "color": "gold",
+          "z": 0.065,
+          "radius": 0.016,
+          "parent": "Right-Dial",
+          "position": [
+            -0.574,
+            -1.054420894065871e-16
+          ]
+        },
+        {
+          "id": "Right-Inner-dot-10",
+          "shape": "disk",
+          "color": "gold",
+          "z": 0.065,
+          "radius": 0.016,
+          "parent": "Right-Dial",
+          "position": [
+            -0.49709858177226773,
+            0.28700000000000003
+          ]
+        },
+        {
+          "id": "Right-Inner-dot-11",
+          "shape": "disk",
+          "color": "gold",
+          "z": 0.065,
+          "radius": 0.016,
+          "parent": "Right-Dial",
+          "position": [
+            -0.28700000000000025,
+            0.49709858177226757
+          ]
+        },
+        {
+          "id": "Right-Rotor",
+          "shape": "group",
+          "position": [
+            0,
+            0
+          ],
+          "keys": [
+            {
+              "t": 0.0,
+              "rotation": -23
+            },
+            {
+              "t": 2.76,
+              "rotation": -58
+            },
+            {
+              "t": 4.92,
+              "rotation": -80
+            },
+            {
+              "t": 6.84,
+              "rotation": -104
+            },
+            {
+              "t": 9.0,
+              "rotation": -177
+            },
+            {
+              "t": 12.0,
+              "rotation": -244
+            }
+          ],
+          "parent": "Right-Dial",
+          "z": 0.08
+        },
+        {
+          "id": "Right-Pointer",
+          "shape": "polygon",
+          "color": "cream",
+          "z": 0.011,
+          "points": [
+            [
+              -0.038,
+              -0.659
+            ],
+            [
+              0.038,
+              -0.659
+            ],
+            [
+              0.054,
+              0.97
+            ],
+            [
+              0.027,
+              1.19
+            ],
+            [
+              0,
+              1.49
+            ],
+            [
+              -0.048,
+              1.15
+            ]
+          ],
+          "parent": "Right-Rotor"
+        },
+        {
+          "id": "Right-Pointer-inlay",
+          "shape": "polygon",
+          "color": "gold",
+          "z": 0.013,
+          "points": [
+            [
+              -0.012,
+              0.15
+            ],
+            [
+              0.021,
+              0.15
+            ],
+            [
+              0.015,
+              1.12
+            ],
+            [
+              -0.007,
+              1.13
+            ]
+          ],
+          "parent": "Right-Rotor"
+        },
+        {
+          "id": "Right-Counterweight",
+          "shape": "ring",
+          "color": "cream",
+          "z": 0.014,
+          "radius": 0.106,
+          "stroke": 0.057,
+          "parent": "Right-Rotor",
+          "position": [
+            0,
+            -0.51
+          ]
+        },
+        {
+          "id": "Right-Fastener",
+          "shape": "disk",
+          "color": "oxide",
+          "z": 0.099,
+          "radius": 0.159,
+          "parent": "Right-Dial",
+          "position": [
+            0,
+            0
+          ]
+        },
+        {
+          "id": "Right-Jewel",
+          "shape": "disk",
+          "color": "gold",
+          "z": 0.105,
+          "radius": 0.069,
+          "parent": "Right-Dial",
+          "position": [
+            -0.01,
+            0.013
+          ]
+        },
+        {
+          "id": "Right-Hand-tip",
+          "shape": "disk",
+          "color": "cream",
+          "z": 0.016,
+          "radius": 0.084,
+          "parent": "Right-Rotor",
+          "position": [
+            0,
+            1.765
+          ]
+        },
+        {
+          "id": "Right-Outside-orbit",
+          "shape": "arc",
+          "color": "oxide",
+          "z": 0.012,
+          "radius": 2.012,
+          "startAngle": 201,
+          "endAngle": 337,
+          "stroke": 0.015,
+          "parent": "Right-Dial",
+          "position": [
+            0,
+            0
+          ]
+        },
+        {
+          "id": "Right-Outside-orbit-upper",
+          "shape": "arc",
+          "color": "oxide",
+          "z": 0.013,
+          "radius": 2.01,
+          "startAngle": 25,
+          "endAngle": 107,
+          "stroke": 0.013,
+          "parent": "Right-Dial",
+          "position": [
+            0,
+            0
+          ]
+        },
+        {
+          "id": "Ruler-axis",
+          "shape": "polyline",
+          "color": "ink",
+          "z": 2.1,
+          "points": [
+            [
+              -6.5,
+              -2.39
+            ],
+            [
+              6.5,
+              -2.39
+            ]
+          ],
+          "stroke": 0.023
+        },
+        {
+          "id": "Track-tick-0",
+          "shape": "polyline",
+          "color": "blue",
+          "z": 2.13,
+          "points": [
+            [
+              -6.5,
+              -2.4
+            ],
+            [
+              -6.5,
+              -2.4699999999999998
+            ]
+          ],
+          "stroke": 0.014
+        },
+        {
+          "id": "Track-tick-1",
+          "shape": "polyline",
+          "color": "blue",
+          "z": 2.13,
+          "points": [
+            [
+              -6.25,
+              -2.4
+            ],
+            [
+              -6.25,
+              -2.4699999999999998
+            ]
+          ],
+          "stroke": 0.014
+        },
+        {
+          "id": "Track-tick-2",
+          "shape": "polyline",
+          "color": "blue",
+          "z": 2.13,
+          "points": [
+            [
+              -6.0,
+              -2.4
+            ],
+            [
+              -6.0,
+              -2.55
+            ]
+          ],
+          "stroke": 0.023
+        },
+        {
+          "id": "Track-tick-3",
+          "shape": "polyline",
+          "color": "blue",
+          "z": 2.13,
+          "points": [
+            [
+              -5.75,
+              -2.4
+            ],
+            [
+              -5.75,
+              -2.4699999999999998
+            ]
+          ],
+          "stroke": 0.014
+        },
+        {
+          "id": "Track-tick-4",
+          "shape": "polyline",
+          "color": "blue",
+          "z": 2.13,
+          "points": [
+            [
+              -5.5,
+              -2.4
+            ],
+            [
+              -5.5,
+              -2.4699999999999998
+            ]
+          ],
+          "stroke": 0.014
+        },
+        {
+          "id": "Track-tick-5",
+          "shape": "polyline",
+          "color": "blue",
+          "z": 2.13,
+          "points": [
+            [
+              -5.25,
+              -2.4
+            ],
+            [
+              -5.25,
+              -2.4699999999999998
+            ]
+          ],
+          "stroke": 0.014
+        },
+        {
+          "id": "Track-tick-6",
+          "shape": "polyline",
+          "color": "blue",
+          "z": 2.13,
+          "points": [
+            [
+              -5.0,
+              -2.4
+            ],
+            [
+              -5.0,
+              -2.55
+            ]
+          ],
+          "stroke": 0.023
+        },
+        {
+          "id": "Track-tick-7",
+          "shape": "polyline",
+          "color": "blue",
+          "z": 2.13,
+          "points": [
+            [
+              -4.75,
+              -2.4
+            ],
+            [
+              -4.75,
+              -2.4699999999999998
+            ]
+          ],
+          "stroke": 0.014
+        },
+        {
+          "id": "Track-tick-8",
+          "shape": "polyline",
+          "color": "blue",
+          "z": 2.13,
+          "points": [
+            [
+              -4.5,
+              -2.4
+            ],
+            [
+              -4.5,
+              -2.4699999999999998
+            ]
+          ],
+          "stroke": 0.014
+        },
+        {
+          "id": "Track-tick-9",
+          "shape": "polyline",
+          "color": "blue",
+          "z": 2.13,
+          "points": [
+            [
+              -4.25,
+              -2.4
+            ],
+            [
+              -4.25,
+              -2.4699999999999998
+            ]
+          ],
+          "stroke": 0.014
+        },
+        {
+          "id": "Track-tick-10",
+          "shape": "polyline",
+          "color": "blue",
+          "z": 2.13,
+          "points": [
+            [
+              -4.0,
+              -2.4
+            ],
+            [
+              -4.0,
+              -2.55
+            ]
+          ],
+          "stroke": 0.023
+        },
+        {
+          "id": "Track-tick-11",
+          "shape": "polyline",
+          "color": "blue",
+          "z": 2.13,
+          "points": [
+            [
+              -3.75,
+              -2.4
+            ],
+            [
+              -3.75,
+              -2.4699999999999998
+            ]
+          ],
+          "stroke": 0.014
+        },
+        {
+          "id": "Track-tick-12",
+          "shape": "polyline",
+          "color": "blue",
+          "z": 2.13,
+          "points": [
+            [
+              -3.5,
+              -2.4
+            ],
+            [
+              -3.5,
+              -2.4699999999999998
+            ]
+          ],
+          "stroke": 0.014
+        },
+        {
+          "id": "Track-tick-13",
+          "shape": "polyline",
+          "color": "blue",
+          "z": 2.13,
+          "points": [
+            [
+              -3.25,
+              -2.4
+            ],
+            [
+              -3.25,
+              -2.4699999999999998
+            ]
+          ],
+          "stroke": 0.014
+        },
+        {
+          "id": "Track-tick-14",
+          "shape": "polyline",
+          "color": "blue",
+          "z": 2.13,
+          "points": [
+            [
+              -3.0,
+              -2.4
+            ],
+            [
+              -3.0,
+              -2.55
+            ]
+          ],
+          "stroke": 0.023
+        },
+        {
+          "id": "Track-tick-15",
+          "shape": "polyline",
+          "color": "blue",
+          "z": 2.13,
+          "points": [
+            [
+              -2.75,
+              -2.4
+            ],
+            [
+              -2.75,
+              -2.4699999999999998
+            ]
+          ],
+          "stroke": 0.014
+        },
+        {
+          "id": "Track-tick-16",
+          "shape": "polyline",
+          "color": "blue",
+          "z": 2.13,
+          "points": [
+            [
+              -2.5,
+              -2.4
+            ],
+            [
+              -2.5,
+              -2.4699999999999998
+            ]
+          ],
+          "stroke": 0.014
+        },
+        {
+          "id": "Track-tick-17",
+          "shape": "polyline",
+          "color": "blue",
+          "z": 2.13,
+          "points": [
+            [
+              -2.25,
+              -2.4
+            ],
+            [
+              -2.25,
+              -2.4699999999999998
+            ]
+          ],
+          "stroke": 0.014
+        },
+        {
+          "id": "Track-tick-18",
+          "shape": "polyline",
+          "color": "blue",
+          "z": 2.13,
+          "points": [
+            [
+              -2.0,
+              -2.4
+            ],
+            [
+              -2.0,
+              -2.55
+            ]
+          ],
+          "stroke": 0.023
+        },
+        {
+          "id": "Track-tick-19",
+          "shape": "polyline",
+          "color": "blue",
+          "z": 2.13,
+          "points": [
+            [
+              -1.75,
+              -2.4
+            ],
+            [
+              -1.75,
+              -2.4699999999999998
+            ]
+          ],
+          "stroke": 0.014
+        },
+        {
+          "id": "Track-tick-20",
+          "shape": "polyline",
+          "color": "blue",
+          "z": 2.13,
+          "points": [
+            [
+              -1.5,
+              -2.4
+            ],
+            [
+              -1.5,
+              -2.4699999999999998
+            ]
+          ],
+          "stroke": 0.014
+        },
+        {
+          "id": "Track-tick-21",
+          "shape": "polyline",
+          "color": "blue",
+          "z": 2.13,
+          "points": [
+            [
+              -1.25,
+              -2.4
+            ],
+            [
+              -1.25,
+              -2.4699999999999998
+            ]
+          ],
+          "stroke": 0.014
+        },
+        {
+          "id": "Track-tick-22",
+          "shape": "polyline",
+          "color": "blue",
+          "z": 2.13,
+          "points": [
+            [
+              -1.0,
+              -2.4
+            ],
+            [
+              -1.0,
+              -2.55
+            ]
+          ],
+          "stroke": 0.023
+        },
+        {
+          "id": "Track-tick-23",
+          "shape": "polyline",
+          "color": "blue",
+          "z": 2.13,
+          "points": [
+            [
+              -0.75,
+              -2.4
+            ],
+            [
+              -0.75,
+              -2.4699999999999998
+            ]
+          ],
+          "stroke": 0.014
+        },
+        {
+          "id": "Track-tick-24",
+          "shape": "polyline",
+          "color": "blue",
+          "z": 2.13,
+          "points": [
+            [
+              -0.5,
+              -2.4
+            ],
+            [
+              -0.5,
+              -2.4699999999999998
+            ]
+          ],
+          "stroke": 0.014
+        },
+        {
+          "id": "Track-tick-25",
+          "shape": "polyline",
+          "color": "blue",
+          "z": 2.13,
+          "points": [
+            [
+              -0.25,
+              -2.4
+            ],
+            [
+              -0.25,
+              -2.4699999999999998
+            ]
+          ],
+          "stroke": 0.014
+        },
+        {
+          "id": "Track-tick-26",
+          "shape": "polyline",
+          "color": "oxide",
+          "z": 2.13,
+          "points": [
+            [
+              0.0,
+              -2.4
+            ],
+            [
+              0.0,
+              -2.55
+            ]
+          ],
+          "stroke": 0.023
+        },
+        {
+          "id": "Track-tick-27",
+          "shape": "polyline",
+          "color": "oxide",
+          "z": 2.13,
+          "points": [
+            [
+              0.25,
+              -2.4
+            ],
+            [
+              0.25,
+              -2.4699999999999998
+            ]
+          ],
+          "stroke": 0.014
+        },
+        {
+          "id": "Track-tick-28",
+          "shape": "polyline",
+          "color": "oxide",
+          "z": 2.13,
+          "points": [
+            [
+              0.5,
+              -2.4
+            ],
+            [
+              0.5,
+              -2.4699999999999998
+            ]
+          ],
+          "stroke": 0.014
+        },
+        {
+          "id": "Track-tick-29",
+          "shape": "polyline",
+          "color": "oxide",
+          "z": 2.13,
+          "points": [
+            [
+              0.75,
+              -2.4
+            ],
+            [
+              0.75,
+              -2.4699999999999998
+            ]
+          ],
+          "stroke": 0.014
+        },
+        {
+          "id": "Track-tick-30",
+          "shape": "polyline",
+          "color": "oxide",
+          "z": 2.13,
+          "points": [
+            [
+              1.0,
+              -2.4
+            ],
+            [
+              1.0,
+              -2.55
+            ]
+          ],
+          "stroke": 0.023
+        },
+        {
+          "id": "Track-tick-31",
+          "shape": "polyline",
+          "color": "oxide",
+          "z": 2.13,
+          "points": [
+            [
+              1.25,
+              -2.4
+            ],
+            [
+              1.25,
+              -2.4699999999999998
+            ]
+          ],
+          "stroke": 0.014
+        },
+        {
+          "id": "Track-tick-32",
+          "shape": "polyline",
+          "color": "oxide",
+          "z": 2.13,
+          "points": [
+            [
+              1.5,
+              -2.4
+            ],
+            [
+              1.5,
+              -2.4699999999999998
+            ]
+          ],
+          "stroke": 0.014
+        },
+        {
+          "id": "Track-tick-33",
+          "shape": "polyline",
+          "color": "oxide",
+          "z": 2.13,
+          "points": [
+            [
+              1.75,
+              -2.4
+            ],
+            [
+              1.75,
+              -2.4699999999999998
+            ]
+          ],
+          "stroke": 0.014
+        },
+        {
+          "id": "Track-tick-34",
+          "shape": "polyline",
+          "color": "oxide",
+          "z": 2.13,
+          "points": [
+            [
+              2.0,
+              -2.4
+            ],
+            [
+              2.0,
+              -2.55
+            ]
+          ],
+          "stroke": 0.023
+        },
+        {
+          "id": "Track-tick-35",
+          "shape": "polyline",
+          "color": "oxide",
+          "z": 2.13,
+          "points": [
+            [
+              2.25,
+              -2.4
+            ],
+            [
+              2.25,
+              -2.4699999999999998
+            ]
+          ],
+          "stroke": 0.014
+        },
+        {
+          "id": "Track-tick-36",
+          "shape": "polyline",
+          "color": "oxide",
+          "z": 2.13,
+          "points": [
+            [
+              2.5,
+              -2.4
+            ],
+            [
+              2.5,
+              -2.4699999999999998
+            ]
+          ],
+          "stroke": 0.014
+        },
+        {
+          "id": "Track-tick-37",
+          "shape": "polyline",
+          "color": "oxide",
+          "z": 2.13,
+          "points": [
+            [
+              2.75,
+              -2.4
+            ],
+            [
+              2.75,
+              -2.4699999999999998
+            ]
+          ],
+          "stroke": 0.014
+        },
+        {
+          "id": "Track-tick-38",
+          "shape": "polyline",
+          "color": "oxide",
+          "z": 2.13,
+          "points": [
+            [
+              3.0,
+              -2.4
+            ],
+            [
+              3.0,
+              -2.55
+            ]
+          ],
+          "stroke": 0.023
+        },
+        {
+          "id": "Track-tick-39",
+          "shape": "polyline",
+          "color": "oxide",
+          "z": 2.13,
+          "points": [
+            [
+              3.25,
+              -2.4
+            ],
+            [
+              3.25,
+              -2.4699999999999998
+            ]
+          ],
+          "stroke": 0.014
+        },
+        {
+          "id": "Track-tick-40",
+          "shape": "polyline",
+          "color": "oxide",
+          "z": 2.13,
+          "points": [
+            [
+              3.5,
+              -2.4
+            ],
+            [
+              3.5,
+              -2.4699999999999998
+            ]
+          ],
+          "stroke": 0.014
+        },
+        {
+          "id": "Track-tick-41",
+          "shape": "polyline",
+          "color": "oxide",
+          "z": 2.13,
+          "points": [
+            [
+              3.75,
+              -2.4
+            ],
+            [
+              3.75,
+              -2.4699999999999998
+            ]
+          ],
+          "stroke": 0.014
+        },
+        {
+          "id": "Track-tick-42",
+          "shape": "polyline",
+          "color": "oxide",
+          "z": 2.13,
+          "points": [
+            [
+              4.0,
+              -2.4
+            ],
+            [
+              4.0,
+              -2.55
+            ]
+          ],
+          "stroke": 0.023
+        },
+        {
+          "id": "Track-tick-43",
+          "shape": "polyline",
+          "color": "oxide",
+          "z": 2.13,
+          "points": [
+            [
+              4.25,
+              -2.4
+            ],
+            [
+              4.25,
+              -2.4699999999999998
+            ]
+          ],
+          "stroke": 0.014
+        },
+        {
+          "id": "Track-tick-44",
+          "shape": "polyline",
+          "color": "oxide",
+          "z": 2.13,
+          "points": [
+            [
+              4.5,
+              -2.4
+            ],
+            [
+              4.5,
+              -2.4699999999999998
+            ]
+          ],
+          "stroke": 0.014
+        },
+        {
+          "id": "Track-tick-45",
+          "shape": "polyline",
+          "color": "oxide",
+          "z": 2.13,
+          "points": [
+            [
+              4.75,
+              -2.4
+            ],
+            [
+              4.75,
+              -2.4699999999999998
+            ]
+          ],
+          "stroke": 0.014
+        },
+        {
+          "id": "Track-tick-46",
+          "shape": "polyline",
+          "color": "oxide",
+          "z": 2.13,
+          "points": [
+            [
+              5.0,
+              -2.4
+            ],
+            [
+              5.0,
+              -2.55
+            ]
+          ],
+          "stroke": 0.023
+        },
+        {
+          "id": "Track-tick-47",
+          "shape": "polyline",
+          "color": "oxide",
+          "z": 2.13,
+          "points": [
+            [
+              5.25,
+              -2.4
+            ],
+            [
+              5.25,
+              -2.4699999999999998
+            ]
+          ],
+          "stroke": 0.014
+        },
+        {
+          "id": "Track-tick-48",
+          "shape": "polyline",
+          "color": "oxide",
+          "z": 2.13,
+          "points": [
+            [
+              5.5,
+              -2.4
+            ],
+            [
+              5.5,
+              -2.4699999999999998
+            ]
+          ],
+          "stroke": 0.014
+        },
+        {
+          "id": "Track-tick-49",
+          "shape": "polyline",
+          "color": "oxide",
+          "z": 2.13,
+          "points": [
+            [
+              5.75,
+              -2.4
+            ],
+            [
+              5.75,
+              -2.4699999999999998
+            ]
+          ],
+          "stroke": 0.014
+        },
+        {
+          "id": "Track-tick-50",
+          "shape": "polyline",
+          "color": "oxide",
+          "z": 2.13,
+          "points": [
+            [
+              6.0,
+              -2.4
+            ],
+            [
+              6.0,
+              -2.55
+            ]
+          ],
+          "stroke": 0.023
+        },
+        {
+          "id": "Track-tick-51",
+          "shape": "polyline",
+          "color": "oxide",
+          "z": 2.13,
+          "points": [
+            [
+              6.25,
+              -2.4
+            ],
+            [
+              6.25,
+              -2.4699999999999998
+            ]
+          ],
+          "stroke": 0.014
+        },
+        {
+          "id": "Track-tick-52",
+          "shape": "polyline",
+          "color": "oxide",
+          "z": 2.13,
+          "points": [
+            [
+              6.5,
+              -2.4
+            ],
+            [
+              6.5,
+              -2.4699999999999998
+            ]
+          ],
+          "stroke": 0.014
+        },
+        {
+          "id": "Original-phase-mark",
+          "shape": "polyline",
+          "color": "ink",
+          "z": 2.15,
+          "points": [
+            [
+              0,
+              -2.04
+            ],
+            [
+              0,
+              -2.73
+            ]
+          ],
+          "stroke": 0.03
+        },
+        {
+          "id": "Blue-Reading",
+          "shape": "group",
+          "position": [
+            0,
+            0
+          ],
+          "keys": [
+            {
+              "t": 0.0,
+              "position": [
+                0,
+                -2.39
+              ]
+            },
+            {
+              "t": 5.04,
+              "position": [
+                0,
+                -2.39
+              ]
+            },
+            {
+              "t": 7.32,
+              "position": [
+                -0.54,
+                -2.39
+              ]
+            },
+            {
+              "t": 12.0,
+              "position": [
+                -1.07,
+                -2.39
+              ]
+            }
+          ],
+          "z": 2.2
+        },
+        {
+          "id": "Blue-Upper-pin",
+          "shape": "polygon",
+          "color": "blue",
+          "z": 0.011,
+          "points": [
+            [
+              -0.125,
+              0.35
+            ],
+            [
+              0.125,
+              0.35
+            ],
+            [
+              0.125,
+              0.18
+            ],
+            [
+              0,
+              0.042
+            ],
+            [
+              -0.125,
+              0.18
+            ]
+          ],
+          "parent": "Blue-Reading"
+        },
+        {
+          "id": "Blue-Trackdot",
+          "shape": "disk",
+          "color": "blue",
+          "z": 0.012,
+          "radius": 0.051,
+          "parent": "Blue-Reading",
+          "position": [
+            0,
+            0
+          ]
+        },
+        {
+          "id": "Red-Reading",
+          "shape": "group",
+          "position": [
+            0,
+            0
+          ],
+          "keys": [
+            {
+              "t": 0.0,
+              "position": [
+                0,
+                -2.39
+              ]
+            },
+            {
+              "t": 5.04,
+              "position": [
+                0,
+                -2.39
+              ]
+            },
+            {
+              "t": 7.32,
+              "position": [
+                0.54,
+                -2.39
+              ]
+            },
+            {
+              "t": 12.0,
+              "position": [
+                3.0,
+                -2.39
+              ]
+            }
+          ],
+          "z": 2.2
+        },
+        {
+          "id": "Red-Lower-pin",
+          "shape": "polygon",
+          "color": "ember",
+          "z": 0.011,
+          "points": [
+            [
+              -0.125,
+              -0.38
+            ],
+            [
+              0.125,
+              -0.38
+            ],
+            [
+              0.125,
+              -0.19
+            ],
+            [
+              0,
+              -0.053
+            ],
+            [
+              -0.125,
+              -0.19
+            ]
+          ],
+          "parent": "Red-Reading"
+        },
+        {
+          "id": "Red-Trackdot",
+          "shape": "disk",
+          "color": "ember",
+          "z": 0.012,
+          "radius": 0.051,
+          "parent": "Red-Reading",
+          "position": [
+            0,
+            0
+          ]
+        }
+      ]
+    }
+  ]
+}

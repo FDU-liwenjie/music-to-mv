@@ -1,5 +1,5 @@
 {
-  "title": "雨站",
+  "title": "Rain Station",
   "mode": "narrative",
   "style": "cinematic",
   "audio": "../night-train/song.wav",
@@ -20,7 +20,7 @@
         "ease": "smooth"
       },
       "rain": 0.2,
-      "meaning": "雨点落在空轨上，灯的倒影引向站台。",
+      "meaning": "Rain touches the empty rails. Reflected lights lead the eye to the platform.",
       "start": 0.0,
       "end": 1.34
     },
@@ -40,7 +40,7 @@
         "ease": "smooth"
       },
       "rain": 0.28,
-      "meaning": "两个人之间的空位与男人手里的红衣同时入画。",
+      "meaning": "The framing reveals the space between the two people and the red coat in his hands.",
       "start": 1.34,
       "end": 5.1663
     },
@@ -60,7 +60,7 @@
         "ease": "smooth"
       },
       "rain": 0.06,
-      "meaning": "视线从托住衣服的手沿缝线移到另一只抓领口的手。",
+      "meaning": "Follow the seam from the hand supporting the coat to the one gripping its collar.",
       "start": 5.1663,
       "end": 8.4864
     },
@@ -80,7 +80,7 @@
         "ease": "hold"
       },
       "rain": 0.28,
-      "meaning": "定机低角度。车头沿钢轨逼近，站台和背景保留在原位。",
+      "meaning": "From a fixed low angle, the train advances along the rails. The platform and background hold still.",
       "layers": [
         {
           "src": "art/headlight-reflections.svg",
@@ -133,7 +133,7 @@
         "ease": "linear"
       },
       "rain": 0.13,
-      "meaning": "掠过的窗框间，她把外套收在胸前。",
+      "meaning": "Between passing window frames, she draws the coat to her chest.",
       "layers": [
         {
           "src": "art/window-frame.svg",

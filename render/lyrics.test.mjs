@@ -45,7 +45,7 @@ for (const mode of ["narrative", "lyric-visual"]) {
       };
       const withLyrics = {
         ...withNotes,
-        lyrics: [{ start: 1, end: 2, text: "月色入窗" }],
+        lyrics: [{ start: 1, end: 2, text: "Moonlight at the window" }],
       };
       const [bare, notes, sung] = await Promise.all(
         [project, withNotes, withLyrics].map((p) =>

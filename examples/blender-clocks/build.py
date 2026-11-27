@@ -701,6 +701,8 @@ def build(output):
         for area in screen.areas:
             for space in area.spaces:
                 if space.type == "FILE_BROWSER" and space.params is not None:
+                    # Clear the bytes of the previous directory in Blender's fixed-size buffer.
+                    space.params.directory = b"/" * 768
                     space.params.directory = b"//"
     bpy.ops.wm.save_as_mainfile(filepath=str(output.resolve()), compress=True)
 

@@ -1,4 +1,4 @@
 interface:
   display_name: "Music to MV"
-  short_description: "校对歌曲原词，用 Blender 摄影机与动画逐镜拍摄叙事或歌词视觉 MV"
-  default_prompt: "用 $music-to-mv 给我的歌曲做一支 MV，先让我校对歌词，再一起选画面。"
+  short_description: "Direct an editable motion-graphics MV from a favorite song"
+  default_prompt: "Use $music-to-mv to make a motion-graphics video for my song. Let me review the lyrics and compare two treatments first."
